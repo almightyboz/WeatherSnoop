@@ -1,11 +1,11 @@
-class SessionsController < ApplicationController
+class SessionController < ApplicationController
 
   def create
     @user = User.find_by(username: session_params[:username])
 
     if @user && @user.authenticate(session_params[:password])
       session[:user_id] = @user.id
-      redirect_to user_url
+      redirect_to queries_url
     else
       flash[:notice] = "Oops, please try again"
       render 'new'
