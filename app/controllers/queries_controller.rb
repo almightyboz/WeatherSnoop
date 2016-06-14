@@ -1,3 +1,6 @@
+require "date"
+require "time"
+
 class QueriesController < ApplicationController
   before_action :set_query, only: :show
 
@@ -6,6 +9,7 @@ class QueriesController < ApplicationController
   end
 
   def show
+
   end
 
   def new
@@ -14,8 +18,29 @@ class QueriesController < ApplicationController
 
   def create
     # different tracks if you're querying for a current address or an address and date
-    @query = Query.new(query_params)
-
+    # p query_params
+    # now write code to build the query, with dates
+    if query_params["today"]
+      month = Date.today.month.to_s
+      day = Date.today.day.to_s
+      year = Date.today.year.to_s
+      # query_params["month"] = month
+      # query_params["day"] = day
+      # query_params["year"] = year
+      # p "========================================"
+      # p "#{month}, #{day}, #{year}"
+      # p "========================================"
+     @query = Query.new(address_string: query_params[:address_string].to_s,
+      month: month,
+      day: day,
+      year: year)
+     # p @query.inspect
+    else
+      @query = Query.new(query_params)
+      # p @query.inspect
+    end
+    # p "========================================"
+    # @query.save
     respond_to do |format|
       if @query.save
         format.html { redirect_to @query, notice: 'Query was successfully created.' }
@@ -34,6 +59,6 @@ class QueriesController < ApplicationController
     end
 
     def query_params
-      params.fetch(:query, {})
+      params.require(:query).permit(:address_string, :today, :month, :year, :day)
     end
 end
