@@ -17,17 +17,26 @@ class QueriesController < ApplicationController
 
   def create
     # different tracks if you're querying for a current address or an address and date
-
     # p query_params
 
     # now write code to build the query, with dates
     if query_params["today"]
-      # date is today
+      month = Date.today.month
+      day = Date.today.day
+      year = Date.today.year
+      # query_params["month"] = month
+      # query_params["day"] = day
+      # query_params["year"] = year
+      p "========================================"
+      # p "#{month}, #{day}, #{year}"
+      # p "========================================"
+     @query = Query.new(address_string: query_params[:address_string], month: month, day: day, year: year)
+     p @query.inspect
     else
-      # the month, day ad year should be saved to the DB
+      @query = Query.new(query_params)
+      p @query.inspect
     end
-    # @query = Query.new(query_params)
-
+    p "========================================"
     # respond_to do |format|
     #   if @query.save
     #     format.html { redirect_to @query, notice: 'Query was successfully created.' }
