@@ -33,6 +33,19 @@ class Query < ActiveRecord::Base
     # today_summary = parsed_weather_response["hourly"]["summary"]
   end
 
+  def today
+  end
+
+  def month
+  end
+
+  def day
+  end
+
+  def year
+  end
+
+
   def current_weather
     self.get_parsed_weather["currently"]
   end

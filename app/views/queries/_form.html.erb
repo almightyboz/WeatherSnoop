@@ -1,4 +1,5 @@
 <%= form_for(@query) do |f| %>
+
   <% if @query.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@query.errors.count, "error") %> prohibited this query from being saved:</h2>
@@ -12,9 +13,29 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :address_string %><br>
+    <%= f.label :Your_Address %><br>
     <%= f.text_field :address_string, placeholder: "123 Fake Street, Anytown, AF" %>
   </div>
+
+  <div class="field date-fields">
+    <%= f.label :Date %>
+
+    <div class="date-field">
+      <%= f.radio_button :today, "today" %>
+      <%= f.label :today, "Today" %>
+    </div><br>
+
+    <div class="date-field">
+      <%= f.select(:month, options_for_select( ("01".."12").to_a )) %>
+    </div>
+    <div class="date-field">
+      <%= f.select(:day, options_for_select( ("01".."31").to_a )) %>
+    </div>
+    <div class="date-field">
+      <%= f.select(:year, options_for_select( ("1970".."2016").to_a )) %>
+    </div>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
