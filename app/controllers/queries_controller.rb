@@ -2,7 +2,7 @@ require "date"
 require "time"
 
 class QueriesController < ApplicationController
-  before_action :set_query, only: :show
+  before_action :set_query, only: [:show, :historic]
 
   def index
     @queries = Query.all
@@ -53,6 +53,9 @@ class QueriesController < ApplicationController
         format.json { render json: @query.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def historic
   end
 
 
