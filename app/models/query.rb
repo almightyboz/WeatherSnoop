@@ -9,9 +9,6 @@ class Query < ActiveRecord::Base
     self.address_string.split(" ").select{ |unit| unit.to_s }
   end
 
-  def convert_date(input_date)
-  end
-
   def convert_address
     map_key = ENV["map_key"]
     map_uri = URI("https://maps.googleapis.com/maps/api/geocode/json?address=#{self.split_query_string}&key=#{map_key}")
@@ -36,15 +33,9 @@ class Query < ActiveRecord::Base
   def today
   end
 
-  def month
+  def create_date
+    "#{self.year}-#{self.month}-#{self.day}T00:00:00"
   end
-
-  def day
-  end
-
-  def year
-  end
-
 
   def current_weather
     self.get_parsed_weather["currently"]
@@ -61,9 +52,9 @@ class Query < ActiveRecord::Base
   # get it as a JSON document, so I can use the JSON objects with D3?
   def get_past_weather(date)
     weather_key = ENV["weather_key"]
-    weather_uri = URI("https://api.forecast.io/forecast/#{weather_key}/#{latitude},#{longitude},#{date}")
+    weather_uri = URI("https://api.forecast.io/forecast/#{weather_key}/#{latitude},#{longitude},#{self.create_date}")
     weather_response = Net::HTTP.get(weather_uri)
-    # JSON.parse(weather_response)
+    JSON.parse(weather_response)
   end
 
 end
