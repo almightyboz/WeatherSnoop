@@ -1,8 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<!-- <div id="historical">
-  <%= render :partial %>
-</div> -->
+<p>Today's forecast: <%= @hourly %></p>
 
-<%= link_to 'Edit', edit_query_path(@query) %> |
-<%= link_to 'Back', queries_path %>
+<% @currently.each do | category, data | %>
+  <p><%= "The #{category} is currently #{data}" %></p>
+<% end %>
+
+
+
+

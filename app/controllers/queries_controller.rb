@@ -2,14 +2,17 @@ require "date"
 require "time"
 
 class QueriesController < ApplicationController
-  before_action :set_query, only: :show
+  before_action :set_query, only: [:show, :historic]
 
   def index
     @queries = Query.all
   end
 
   def show
-
+    @weather = @query.get_parsed_weather
+    @currently = @weather["currently"]
+    @hourly = @weather["hourly"]["summary"]
+    @daily = @weather["daily"]["summary"]
   end
 
   def new
@@ -50,6 +53,9 @@ class QueriesController < ApplicationController
         format.json { render json: @query.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def historic
   end
 
 
