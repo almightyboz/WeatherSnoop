@@ -37,17 +37,17 @@ class Query < ActiveRecord::Base
     "#{self.year}-#{self.month}-#{self.day}T00:00:00"
   end
 
-  def current_weather
-    self.get_parsed_weather["currently"]
-  end
+  # def current_weather
+  #   self.get_parsed_weather["currently"]
+  # end
 
-  def daily_forecast
-    self.get_parsed_weather["hourly"]
-  end
+  # def daily_forecast
+  #   self.get_parsed_weather["hourly"]
+  # end
 
-  def weekly_forecast
-    self.get_parsed_weather["daily"]
-  end
+  # def weekly_forecast
+  #   self.get_parsed_weather["daily"]
+  # end
 
   # get it as a JSON document, so I can use the JSON objects with D3?
   def get_past_weather(date)
