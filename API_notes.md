@@ -10,6 +10,7 @@ Day-by-day forecasts out to 7 days
 There are two types of API calls. A forecast request returns the current forecast (for the next week):
 
 https://api.forecast.io/forecast/APIKEY/LATITUDE,LONGITUDE
+___
 A time-machine request returns the observed weather at a given time (for many places, up to 60 years in the past):
 
 https://api.forecast.io/forecast/APIKEY/LATITUDE,LONGITUDE,TIME

@@ -11,7 +11,12 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :address_string %><br>
+    <%= f.text_field :address_string, placeholder: "123 Fake Street, Anytown, AF" %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>
