@@ -1,7 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<% @currently.each do |category, data| %>
-  <p><%= "The #{currently} is currently #{data}" %></p>
+<p>Today's forecast: <%= @hourly %></p>
+
+<% @currently.each do | category, data | %>
+  <p><%= "The #{category} is currently #{data}" %></p>
 <% end %>
+
 
 

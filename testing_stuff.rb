@@ -6,8 +6,9 @@ require 'date'
 require 'time'
 
 #THIS ALL FUCKING WORKS
-map_key = ENV["map_key"]
+map_key = ENV["MAP_KEY"]
 test_address = ["534", "Washington", "Avenue", "Newtown", "PA"]
+p "https://maps.googleapis.com/maps/api/geocode/json?address=#{test_address}&key=#{map_key}"
 map_uri = URI("https://maps.googleapis.com/maps/api/geocode/json?address=#{test_address}&key=#{map_key}")
 map_response = Net::HTTP.get(map_uri)
 parsed_map_response = JSON.parse(map_response)
@@ -18,14 +19,16 @@ longitude = coordinates["lng"]
 # puts "#{latitude} and #{longitude}"
 # puts map_key
 
-weather_key = ENV["weather_key"]
+weather_key = ENV["WEATHER_KEY"]
+p weather_key
 # FLAWLESS FUCKING VICTORY FOR CURRENT WEATHER
 weather_uri = URI("https://api.forecast.io/forecast/#{weather_key}/#{latitude},#{longitude}")
 weather_response = Net::HTTP.get(weather_uri)
+# puts weather_response
 parsed_weather_response = JSON.parse(weather_response)
 current_weather =  parsed_weather_response["currently"]
-today_summary = parsed_weather_response["hourly"]["summary"]
-weekly_summary =  parsed_weather_response["daily"]["summary"]
+puts parsed_weather_response["hourly"]["summary"]
+# weekly_summary =  parsed_weather_response["daily"]["summary"]
 
 # PAST FUCKING WEATHER. IT FUCKING WORKS
 # puts weather_key

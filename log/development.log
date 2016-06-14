@@ -1755,3 +1755,1502 @@ ActionView::Template::Error (':partial' is not an ActiveModel-compatible object.
   Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
   Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
   Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (191.1ms)
+
+
+Started GET "/queries/5" for ::1 at 2016-06-14 14:34:15 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by QueriesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mQuery Load (1.1ms)[0m  SELECT  "queries".* FROM "queries" WHERE "queries"."id" = $1 LIMIT 1  [["id", 5]]
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 4.5ms)
+
+NameError (undefined local variable or method `latitude' for #<Query:0x007fc97334d390>):
+  app/models/query.rb:25:in `get_parsed_weather'
+  app/controllers/queries_controller.rb:12:in `show'
+
+
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (109.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (98.3ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.3ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (220.3ms)
+
+
+Started GET "/queries/5" for ::1 at 2016-06-14 14:35:13 -0500
+Processing by QueriesController#show as HTML
+  Parameters: {"id"=>"5"}
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/emilybosakowski/Job_Applications/bluewolf/tier_2/weathersnoop/app/models/query.rb:18: dynamic constant assignment
+    LATITUDE = coordinates["lat"]
+              ^
+/Users/emilybosakowski/Job_Applications/bluewolf/tier_2/weathersnoop/app/models/query.rb:19: dynamic constant assignment
+    LONGITUDE = coordinates["lng"]
+               ^):
+  app/models/query.rb:18: dynamic constant assignment
+  app/models/query.rb:19: dynamic constant assignment
+  app/controllers/queries_controller.rb:61:in `set_query'
+
+
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (103.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (92.3ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (198.8ms)
+
+
+Started GET "/queries/5" for ::1 at 2016-06-14 14:36:23 -0500
+Processing by QueriesController#show as HTML
+  Parameters: {"id"=>"5"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/emilybosakowski/Job_Applications/bluewolf/tier_2/weathersnoop/app/models/query.rb:22: dynamic constant assignment
+    LATITUDE = coordinates["lat"]
+              ^
+/Users/emilybosakowski/Job_Applications/bluewolf/tier_2/weathersnoop/app/models/query.rb:23: dynamic constant assignment
+    LONGITUDE = coordinates["lng"]
+               ^):
+  app/models/query.rb:22: dynamic constant assignment
+  app/models/query.rb:23: dynamic constant assignment
+  app/controllers/queries_controller.rb:61:in `set_query'
+
+
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (16.8ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (110.1ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (91.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (202.5ms)
+
+
+Started GET "/" for ::1 at 2016-06-14 14:36:44 -0500
+Processing by QueriesController#new as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/emilybosakowski/Job_Applications/bluewolf/tier_2/weathersnoop/app/models/query.rb:22: dynamic constant assignment
+    LATITUDE = coordinates["lat"]
+              ^
+/Users/emilybosakowski/Job_Applications/bluewolf/tier_2/weathersnoop/app/models/query.rb:23: dynamic constant assignment
+    LONGITUDE = coordinates["lng"]
+               ^):
+  app/models/query.rb:22: dynamic constant assignment
+  app/models/query.rb:23: dynamic constant assignment
+  app/controllers/queries_controller.rb:19:in `new'
+
+
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (101.1ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (79.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (179.7ms)
+
+
+Started GET "/" for ::1 at 2016-06-14 14:38:46 -0500
+Processing by QueriesController#new as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/emilybosakowski/Job_Applications/bluewolf/tier_2/weathersnoop/app/models/query.rb:21: dynamic constant assignment
+    LATITUDE = coordinates["lat"]
+              ^
+/Users/emilybosakowski/Job_Applications/bluewolf/tier_2/weathersnoop/app/models/query.rb:22: dynamic constant assignment
+    LONGITUDE = coordinates["lng"]
+               ^):
+  app/models/query.rb:21: dynamic constant assignment
+  app/models/query.rb:22: dynamic constant assignment
+  app/controllers/queries_controller.rb:19:in `new'
+
+
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (105.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (78.9ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (181.1ms)
+
+
+Started GET "/" for ::1 at 2016-06-14 14:40:28 -0500
+Processing by QueriesController#new as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/emilybosakowski/Job_Applications/bluewolf/tier_2/weathersnoop/app/models/query.rb:19: syntax error, unexpected tCONSTANT, expecting ']'
+    LONGITUDE = coordinates["lng"]
+             ^
+/Users/emilybosakowski/Job_Applications/bluewolf/tier_2/weathersnoop/app/models/query.rb:19: dynamic constant assignment
+    LONGITUDE = coordinates["lng"]
+               ^):
+  app/models/query.rb:19: syntax error, unexpected tCONSTANT, expecting ']'
+  app/models/query.rb:19: dynamic constant assignment
+  app/controllers/queries_controller.rb:19:in `new'
+
+
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.3ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (98.9ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (86.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (201.0ms)
+
+
+Started GET "/" for ::1 at 2016-06-14 14:40:37 -0500
+Processing by QueriesController#new as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/emilybosakowski/Job_Applications/bluewolf/tier_2/weathersnoop/app/models/query.rb:20: syntax error, unexpected keyword_end, expecting ']'
+/Users/emilybosakowski/Job_Applications/bluewolf/tier_2/weathersnoop/app/models/query.rb:50: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/models/query.rb:20: syntax error, unexpected keyword_end, expecting ']'
+  app/models/query.rb:50: syntax error, unexpected end-of-input, expecting keyword_end
+  app/controllers/queries_controller.rb:19:in `new'
+
+
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.9ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (83.2ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (65.3ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (146.9ms)
+
+
+Started GET "/" for ::1 at 2016-06-14 14:40:42 -0500
+Processing by QueriesController#new as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/emilybosakowski/Job_Applications/bluewolf/tier_2/weathersnoop/app/models/query.rb:20: syntax error, unexpected keyword_end, expecting ']'
+/Users/emilybosakowski/Job_Applications/bluewolf/tier_2/weathersnoop/app/models/query.rb:50: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/models/query.rb:20: syntax error, unexpected keyword_end, expecting ']'
+  app/models/query.rb:50: syntax error, unexpected end-of-input, expecting keyword_end
+  app/controllers/queries_controller.rb:19:in `new'
+
+
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (90.0ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (94.1ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (216.4ms)
+
+
+Started GET "/" for ::1 at 2016-06-14 14:41:01 -0500
+Processing by QueriesController#new as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/emilybosakowski/Job_Applications/bluewolf/tier_2/weathersnoop/app/models/query.rb:20: syntax error, unexpected keyword_end, expecting ']'
+/Users/emilybosakowski/Job_Applications/bluewolf/tier_2/weathersnoop/app/models/query.rb:50: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/models/query.rb:20: syntax error, unexpected keyword_end, expecting ']'
+  app/models/query.rb:50: syntax error, unexpected end-of-input, expecting keyword_end
+  app/controllers/queries_controller.rb:19:in `new'
+
+
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.3ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.0ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (121.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.3ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (94.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (215.7ms)
+
+
+Started GET "/" for ::1 at 2016-06-14 14:42:18 -0500
+Processing by QueriesController#new as HTML
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/emilybosakowski/Job_Applications/bluewolf/tier_2/weathersnoop/app/models/query.rb:20: syntax error, unexpected keyword_end, expecting ']'
+/Users/emilybosakowski/Job_Applications/bluewolf/tier_2/weathersnoop/app/models/query.rb:50: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/models/query.rb:20: syntax error, unexpected keyword_end, expecting ']'
+  app/models/query.rb:50: syntax error, unexpected end-of-input, expecting keyword_end
+  app/controllers/queries_controller.rb:19:in `new'
+
+
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.2ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (90.0ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (3.0ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (85.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (182.7ms)
+
+
+Started GET "/" for ::1 at 2016-06-14 14:42:42 -0500
+Processing by QueriesController#new as HTML
+  Rendered queries/_form.html.erb (96.1ms)
+  Rendered queries/new.html.erb within layouts/application (100.7ms)
+Completed 200 OK in 579ms (Views: 561.5ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/assets/queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 14:42:44 -0500
+
+
+Started GET "/assets/scaffolds.self-44fae4e18213dacaff5a336884e9abe34f3e626ec23c8f95bdee8904297d1908.css?body=1" for ::1 at 2016-06-14 14:42:44 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 14:42:44 -0500
+
+
+Started GET "/assets/user_queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 14:42:44 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 14:42:44 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-14 14:42:44 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-14 14:42:44 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-14 14:42:44 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-14 14:42:44 -0500
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-14 14:42:44 -0500
+
+
+Started GET "/assets/maps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-14 14:42:44 -0500
+
+
+Started GET "/assets/queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 14:42:44 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 14:42:44 -0500
+
+
+Started GET "/assets/user_queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 14:42:44 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 14:42:44 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-14 14:42:44 -0500
+
+
+Started POST "/queries" for ::1 at 2016-06-14 14:42:52 -0500
+Processing by QueriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e33FS4q+f1DsCBmB5ZoRHiLEiJdnFT8ma2RLsmy+BkNiksENQDLtXQmC40OD0qvmkApIqbqEmntdNgJZzD1YJw==", "query"=>{"address_string"=>"534 Washington Ave, Newtown PA", "month"=>"01", "day"=>"01", "year"=>"1970"}, "commit"=>"Create Query"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (11.7ms)[0m  INSERT INTO "queries" ("address_string", "month", "year", "day", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address_string", "534 Washington Ave, Newtown PA"], ["month", "01"], ["year", "1970"], ["day", "01"], ["created_at", "2016-06-14 19:42:52.392045"], ["updated_at", "2016-06-14 19:42:52.392045"]]
+  [1m[36m (3.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/queries/6
+Completed 302 Found in 29ms (ActiveRecord: 15.3ms)
+
+
+Started GET "/queries/6" for ::1 at 2016-06-14 14:42:52 -0500
+Processing by QueriesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mQuery Load (0.4ms)[0m  SELECT  "queries".* FROM "queries" WHERE "queries"."id" = $1 LIMIT 1  [["id", 6]]
+Completed 500 Internal Server Error in 996ms (ActiveRecord: 0.4ms)
+
+JSON::ParserError (757: unexpected token at '<html>
+<head><title>400 Bad Request</title></head>
+<body bgcolor="white">
+<center><h1>400 Bad Request</h1></center>
+<hr><center>nginx/1.4.6 (Ubuntu)</center>
+</body>
+</html>
+'):
+  app/models/query.rb:28:in `get_parsed_weather'
+  app/controllers/queries_controller.rb:12:in `show'
+
+
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (97.3ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (88.9ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (199.3ms)
+
+
+Started GET "/" for ::1 at 2016-06-14 14:47:29 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by QueriesController#new as HTML
+  Rendered queries/_form.html.erb (50.0ms)
+  Rendered queries/new.html.erb within layouts/application (61.5ms)
+Completed 200 OK in 533ms (Views: 493.6ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/assets/scaffolds.self-44fae4e18213dacaff5a336884e9abe34f3e626ec23c8f95bdee8904297d1908.css?body=1" for ::1 at 2016-06-14 14:47:31 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 14:47:31 -0500
+
+
+Started GET "/assets/user_queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 14:47:31 -0500
+
+
+Started GET "/assets/queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 14:47:31 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-14 14:47:31 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-14 14:47:31 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 14:47:31 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-14 14:47:31 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-14 14:47:31 -0500
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-14 14:47:31 -0500
+
+
+Started GET "/assets/maps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-14 14:47:31 -0500
+
+
+Started GET "/assets/queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 14:47:31 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 14:47:31 -0500
+
+
+Started GET "/assets/user_queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 14:47:31 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 14:47:31 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-14 14:47:31 -0500
+
+
+Started POST "/queries" for ::1 at 2016-06-14 14:47:36 -0500
+Processing by QueriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tHDF92vDYfSk1Vzr4LBvzFW6TocKL5HHzyLv70Gj8Mytn8GxoU/z+UFfpimG+NU053SOude+NJr5cKYE4SCuqA==", "query"=>{"address_string"=>"534 Washington Ave, Newtown PA", "today"=>"today", "month"=>"01", "day"=>"01", "year"=>"1970"}, "commit"=>"Create Query"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (6.6ms)[0m  [1mINSERT INTO "queries" ("address_string", "month", "day", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address_string", "534 Washington Ave, Newtown PA"], ["month", "6"], ["day", "14"], ["year", "2016"], ["created_at", "2016-06-14 19:47:36.045343"], ["updated_at", "2016-06-14 19:47:36.045343"]]
+  [1m[35m (12.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/queries/7
+Completed 302 Found in 37ms (ActiveRecord: 19.3ms)
+
+
+Started GET "/queries/7" for ::1 at 2016-06-14 14:47:36 -0500
+Processing by QueriesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mQuery Load (0.4ms)[0m  [1mSELECT  "queries".* FROM "queries" WHERE "queries"."id" = $1 LIMIT 1[0m  [["id", 7]]
+Completed 500 Internal Server Error in 812ms (ActiveRecord: 0.4ms)
+
+JSON::ParserError (757: unexpected token at '<html>
+<head><title>400 Bad Request</title></head>
+<body bgcolor="white">
+<center><h1>400 Bad Request</h1></center>
+<hr><center>nginx/1.4.6 (Ubuntu)</center>
+</body>
+</html>
+'):
+  app/models/query.rb:28:in `get_parsed_weather'
+  app/controllers/queries_controller.rb:12:in `show'
+
+
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.9ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (97.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (79.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (175.6ms)
+
+
+Started GET "/queries/7" for ::1 at 2016-06-14 14:49:32 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by QueriesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mQuery Load (1.1ms)[0m  SELECT  "queries".* FROM "queries" WHERE "queries"."id" = $1 LIMIT 1  [["id", 7]]
+Completed 500 Internal Server Error in 388ms (ActiveRecord: 5.1ms)
+
+JSON::ParserError (757: unexpected token at '<html>
+<head><title>400 Bad Request</title></head>
+<body bgcolor="white">
+<center><h1>400 Bad Request</h1></center>
+<hr><center>nginx/1.4.6 (Ubuntu)</center>
+</body>
+</html>
+'):
+  app/models/query.rb:28:in `get_parsed_weather'
+  app/controllers/queries_controller.rb:12:in `show'
+
+
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.3ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (118.8ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (110.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (228.6ms)
+
+
+Started GET "/" for ::1 at 2016-06-14 14:49:39 -0500
+Processing by QueriesController#new as HTML
+  Rendered queries/_form.html.erb (35.5ms)
+  Rendered queries/new.html.erb within layouts/application (38.9ms)
+Completed 200 OK in 427ms (Views: 425.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.self-44fae4e18213dacaff5a336884e9abe34f3e626ec23c8f95bdee8904297d1908.css?body=1" for ::1 at 2016-06-14 14:49:39 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 14:49:39 -0500
+
+
+Started GET "/assets/queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 14:49:39 -0500
+
+
+Started GET "/assets/user_queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 14:49:39 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 14:49:39 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-14 14:49:40 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-14 14:49:40 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-14 14:49:40 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-14 14:49:40 -0500
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-14 14:49:40 -0500
+
+
+Started GET "/assets/maps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-14 14:49:40 -0500
+
+
+Started GET "/assets/queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 14:49:40 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 14:49:40 -0500
+
+
+Started GET "/assets/user_queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 14:49:40 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 14:49:40 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-14 14:49:40 -0500
+
+
+Started POST "/queries" for ::1 at 2016-06-14 14:49:44 -0500
+Processing by QueriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N/BOeJr1eL7M0hpfud+i9xkJ3ZoFfcgEfGKzTPOn/TouH0o+UHnqsylY4J3flxgPq8cdpNjsbVlKMPqnUySjXg==", "query"=>{"address_string"=>"534 Washington Ave, Newtown PA", "today"=>"today", "month"=>"01", "day"=>"01", "year"=>"1970"}, "commit"=>"Create Query"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "queries" ("address_string", "month", "day", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address_string", "534 Washington Ave, Newtown PA"], ["month", "6"], ["day", "14"], ["year", "2016"], ["created_at", "2016-06-14 19:49:44.319579"], ["updated_at", "2016-06-14 19:49:44.319579"]]
+  [1m[36m (6.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/queries/8
+Completed 302 Found in 13ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/queries/8" for ::1 at 2016-06-14 14:49:44 -0500
+Processing by QueriesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mQuery Load (0.4ms)[0m  SELECT  "queries".* FROM "queries" WHERE "queries"."id" = $1 LIMIT 1  [["id", 8]]
+Completed 500 Internal Server Error in 376ms (ActiveRecord: 0.4ms)
+
+JSON::ParserError (757: unexpected token at '<html>
+<head><title>400 Bad Request</title></head>
+<body bgcolor="white">
+<center><h1>400 Bad Request</h1></center>
+<hr><center>nginx/1.4.6 (Ubuntu)</center>
+</body>
+</html>
+'):
+  app/models/query.rb:28:in `get_parsed_weather'
+  app/controllers/queries_controller.rb:12:in `show'
+
+
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (12.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (100.8ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (82.0ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (185.0ms)
+
+
+Started GET "/queries/8" for ::1 at 2016-06-14 14:52:18 -0500
+Processing by QueriesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mQuery Load (0.4ms)[0m  [1mSELECT  "queries".* FROM "queries" WHERE "queries"."id" = $1 LIMIT 1[0m  [["id", 8]]
+ENV
+ENV
+Completed 500 Internal Server Error in 752ms (ActiveRecord: 3.9ms)
+
+JSON::ParserError (757: unexpected token at '<html>
+<head><title>400 Bad Request</title></head>
+<body bgcolor="white">
+<center><h1>400 Bad Request</h1></center>
+<hr><center>nginx/1.4.6 (Ubuntu)</center>
+</body>
+</html>
+'):
+  app/models/query.rb:29:in `get_parsed_weather'
+  app/controllers/queries_controller.rb:12:in `show'
+
+
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.8ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (80.9ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (96.9ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (202.1ms)
+
+
+Started GET "/" for ::1 at 2016-06-14 14:52:22 -0500
+Processing by QueriesController#new as HTML
+  Rendered queries/_form.html.erb (7.0ms)
+  Rendered queries/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 110ms (Views: 98.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.self-44fae4e18213dacaff5a336884e9abe34f3e626ec23c8f95bdee8904297d1908.css?body=1" for ::1 at 2016-06-14 14:52:23 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-14 14:52:23 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 14:52:23 -0500
+
+
+Started GET "/assets/user_queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 14:52:23 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 14:52:23 -0500
+
+
+Started GET "/assets/queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 14:52:23 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-14 14:52:23 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-14 14:52:23 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-14 14:52:23 -0500
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-14 14:52:23 -0500
+
+
+Started GET "/assets/maps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-14 14:52:23 -0500
+
+
+Started GET "/assets/queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 14:52:23 -0500
+
+
+Started GET "/assets/user_queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 14:52:23 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 14:52:23 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 14:52:23 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-14 14:52:23 -0500
+
+
+Started POST "/queries" for ::1 at 2016-06-14 14:52:31 -0500
+Processing by QueriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WZeVmbYNpGWj2NI+w9BMDLUUp9SiSHz01DzR5L4MdLZAeJHffIE2aEZSKPylmPb0B9pn6n/Z2anibpgPHo8q0g==", "query"=>{"address_string"=>"534 Washington Ave, Newtown PA", "today"=>"today", "month"=>"01", "day"=>"01", "year"=>"1970"}, "commit"=>"Create Query"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "queries" ("address_string", "month", "day", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address_string", "534 Washington Ave, Newtown PA"], ["month", "6"], ["day", "14"], ["year", "2016"], ["created_at", "2016-06-14 19:52:31.215712"], ["updated_at", "2016-06-14 19:52:31.215712"]]
+  [1m[35m (5.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/queries/9
+Completed 302 Found in 13ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/queries/9" for ::1 at 2016-06-14 14:52:31 -0500
+Processing by QueriesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mQuery Load (0.3ms)[0m  [1mSELECT  "queries".* FROM "queries" WHERE "queries"."id" = $1 LIMIT 1[0m  [["id", 9]]
+ENV
+ENV
+Completed 500 Internal Server Error in 319ms (ActiveRecord: 0.3ms)
+
+JSON::ParserError (757: unexpected token at '<html>
+<head><title>400 Bad Request</title></head>
+<body bgcolor="white">
+<center><h1>400 Bad Request</h1></center>
+<hr><center>nginx/1.4.6 (Ubuntu)</center>
+</body>
+</html>
+'):
+  app/models/query.rb:29:in `get_parsed_weather'
+  app/controllers/queries_controller.rb:12:in `show'
+
+
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (93.0ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (84.1ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (184.3ms)
+
+
+Started GET "/queries/9" for ::1 at 2016-06-14 14:55:49 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by QueriesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mQuery Load (0.7ms)[0m  SELECT  "queries".* FROM "queries" WHERE "queries"."id" = $1 LIMIT 1  [["id", 9]]
+AIzaSyCNEA62gQnM5XFp7nLpqJ7Kyi3v155wx-I
+AIzaSyCNEA62gQnM5XFp7nLpqJ7Kyi3v155wx-I
+Completed 500 Internal Server Error in 801ms (ActiveRecord: 4.1ms)
+
+JSON::ParserError (757: unexpected token at '<html>
+<head><title>400 Bad Request</title></head>
+<body bgcolor="white">
+<center><h1>400 Bad Request</h1></center>
+<hr><center>nginx/1.4.6 (Ubuntu)</center>
+</body>
+</html>
+'):
+  app/models/query.rb:29:in `get_parsed_weather'
+  app/controllers/queries_controller.rb:12:in `show'
+
+
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (118.8ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (105.9ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (224.8ms)
+
+
+Started GET "/" for ::1 at 2016-06-14 14:55:58 -0500
+Processing by QueriesController#new as HTML
+  Rendered queries/_form.html.erb (40.2ms)
+  Rendered queries/new.html.erb within layouts/application (44.7ms)
+Completed 200 OK in 394ms (Views: 392.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/queries" for ::1 at 2016-06-14 14:56:06 -0500
+Processing by QueriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Si6fLLr+EspBxi5q8y4SxYhXM9BSyJed7jvBgs6IGaxTwZtqcHKAx6RM1KiVZqg9Opnz7o9ZMsDYaYhpbgtHyA==", "query"=>{"address_string"=>"534 Washington Ave, Newtown PA", "today"=>"today", "month"=>"01", "day"=>"01", "year"=>"1970"}, "commit"=>"Create Query"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (17.3ms)[0m  INSERT INTO "queries" ("address_string", "month", "day", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address_string", "534 Washington Ave, Newtown PA"], ["month", "6"], ["day", "14"], ["year", "2016"], ["created_at", "2016-06-14 19:56:06.998452"], ["updated_at", "2016-06-14 19:56:06.998452"]]
+  [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/queries/10
+Completed 302 Found in 25ms (ActiveRecord: 19.1ms)
+
+
+Started GET "/queries/10" for ::1 at 2016-06-14 14:56:07 -0500
+Processing by QueriesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mQuery Load (0.4ms)[0m  SELECT  "queries".* FROM "queries" WHERE "queries"."id" = $1 LIMIT 1  [["id", 10]]
+AIzaSyCNEA62gQnM5XFp7nLpqJ7Kyi3v155wx-I
+AIzaSyCNEA62gQnM5XFp7nLpqJ7Kyi3v155wx-I
+Completed 500 Internal Server Error in 713ms (ActiveRecord: 0.4ms)
+
+JSON::ParserError (757: unexpected token at '<html>
+<head><title>400 Bad Request</title></head>
+<body bgcolor="white">
+<center><h1>400 Bad Request</h1></center>
+<hr><center>nginx/1.4.6 (Ubuntu)</center>
+</body>
+</html>
+'):
+  app/models/query.rb:29:in `get_parsed_weather'
+  app/controllers/queries_controller.rb:12:in `show'
+
+
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (21.7ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.7ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (121.7ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (96.7ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.1ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (204.8ms)
+
+
+Started GET "/queries/10" for ::1 at 2016-06-14 14:58:06 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by QueriesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mQuery Load (0.6ms)[0m  SELECT  "queries".* FROM "queries" WHERE "queries"."id" = $1 LIMIT 1  [["id", 10]]
+Completed 500 Internal Server Error in 412ms (ActiveRecord: 4.1ms)
+
+JSON::ParserError (757: unexpected token at '<html>
+<head><title>400 Bad Request</title></head>
+<body bgcolor="white">
+<center><h1>400 Bad Request</h1></center>
+<hr><center>nginx/1.4.6 (Ubuntu)</center>
+</body>
+</html>
+'):
+  app/models/query.rb:27:in `get_parsed_weather'
+  app/controllers/queries_controller.rb:12:in `show'
+
+
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.9ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (116.0ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (93.2ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (204.3ms)
+
+
+Started GET "/" for ::1 at 2016-06-14 14:58:10 -0500
+Processing by QueriesController#new as HTML
+  Rendered queries/_form.html.erb (41.5ms)
+  Rendered queries/new.html.erb within layouts/application (44.5ms)
+Completed 200 OK in 388ms (Views: 386.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-06-14 14:58:12 -0500
+Processing by QueriesController#new as HTML
+  Rendered queries/_form.html.erb (6.6ms)
+  Rendered queries/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 79ms (Views: 78.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.self-44fae4e18213dacaff5a336884e9abe34f3e626ec23c8f95bdee8904297d1908.css?body=1" for ::1 at 2016-06-14 14:58:12 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 14:58:12 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 14:58:12 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-14 14:58:12 -0500
+
+
+Started GET "/assets/user_queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 14:58:12 -0500
+
+
+Started GET "/assets/queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 14:58:12 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-14 14:58:12 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-14 14:58:12 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-14 14:58:12 -0500
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-14 14:58:12 -0500
+
+
+Started GET "/assets/maps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-14 14:58:12 -0500
+
+
+Started GET "/assets/queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 14:58:12 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 14:58:12 -0500
+
+
+Started GET "/assets/user_queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 14:58:12 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 14:58:12 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-14 14:58:12 -0500
+
+
+Started POST "/queries" for ::1 at 2016-06-14 14:58:17 -0500
+Processing by QueriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qjvdMnxxGl9GecBFJmT3Je21pufsZ15ClSG2GW/vk9az1Nl0tv2IUqPzOodALE3dX3tm2TH2+x+jc//yz2zNsg==", "query"=>{"address_string"=>"534 Washington Ave, Newtown PA", "today"=>"today", "month"=>"01", "day"=>"01", "year"=>"1970"}, "commit"=>"Create Query"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (7.5ms)[0m  INSERT INTO "queries" ("address_string", "month", "day", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address_string", "534 Washington Ave, Newtown PA"], ["month", "6"], ["day", "14"], ["year", "2016"], ["created_at", "2016-06-14 19:58:17.092299"], ["updated_at", "2016-06-14 19:58:17.092299"]]
+  [1m[36m (5.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/queries/11
+Completed 302 Found in 22ms (ActiveRecord: 13.0ms)
+
+
+Started GET "/queries/11" for ::1 at 2016-06-14 14:58:17 -0500
+Processing by QueriesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mQuery Load (0.5ms)[0m  SELECT  "queries".* FROM "queries" WHERE "queries"."id" = $1 LIMIT 1  [["id", 11]]
+Completed 500 Internal Server Error in 332ms (ActiveRecord: 0.5ms)
+
+JSON::ParserError (757: unexpected token at '<html>
+<head><title>400 Bad Request</title></head>
+<body bgcolor="white">
+<center><h1>400 Bad Request</h1></center>
+<hr><center>nginx/1.4.6 (Ubuntu)</center>
+</body>
+</html>
+'):
+  app/models/query.rb:27:in `get_parsed_weather'
+  app/controllers/queries_controller.rb:12:in `show'
+
+
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.3ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (104.3ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (87.3ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (190.8ms)
+
+
+Started GET "/queries/11" for ::1 at 2016-06-14 14:58:30 -0500
+Processing by QueriesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mQuery Load (0.3ms)[0m  [1mSELECT  "queries".* FROM "queries" WHERE "queries"."id" = $1 LIMIT 1[0m  [["id", 11]]
+  Rendered queries/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 477ms (Views: 59.1ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/assets/scaffolds.self-44fae4e18213dacaff5a336884e9abe34f3e626ec23c8f95bdee8904297d1908.css?body=1" for ::1 at 2016-06-14 14:58:31 -0500
+
+
+Started GET "/assets/queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 14:58:31 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 14:58:31 -0500
+
+
+Started GET "/assets/user_queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 14:58:31 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 14:58:31 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-14 14:58:31 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-14 14:58:31 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-14 14:58:31 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-14 14:58:31 -0500
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-14 14:58:31 -0500
+
+
+Started GET "/assets/maps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-14 14:58:31 -0500
+
+
+Started GET "/assets/queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 14:58:31 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 14:58:31 -0500
+
+
+Started GET "/assets/user_queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 14:58:31 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 14:58:31 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-14 14:58:31 -0500
+
+
+Started POST "/queries" for ::1 at 2016-06-14 15:02:10 -0500
+Processing by QueriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qjvdMnxxGl9GecBFJmT3Je21pufsZ15ClSG2GW/vk9az1Nl0tv2IUqPzOodALE3dX3tm2TH2+x+jc//yz2zNsg==", "query"=>{"address_string"=>"351 W. Hubbard St, Chicago IL", "today"=>"today", "month"=>"01", "day"=>"01", "year"=>"1970"}, "commit"=>"Create Query"}
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "queries" ("address_string", "month", "day", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["address_string", "351 W. Hubbard St, Chicago IL"], ["month", "6"], ["day", "14"], ["year", "2016"], ["created_at", "2016-06-14 20:02:10.746455"], ["updated_at", "2016-06-14 20:02:10.746455"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/queries/12
+Completed 302 Found in 47ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/queries/12" for ::1 at 2016-06-14 15:02:10 -0500
+Processing by QueriesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mQuery Load (0.4ms)[0m  [1mSELECT  "queries".* FROM "queries" WHERE "queries"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  Rendered queries/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 836ms (Views: 206.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/queries/12" for ::1 at 2016-06-14 15:07:48 -0500
+Processing by QueriesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mQuery Load (0.5ms)[0m  SELECT  "queries".* FROM "queries" WHERE "queries"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered queries/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 644ms (Views: 93.6ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/assets/queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 15:07:49 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 15:07:49 -0500
+
+
+Started GET "/assets/user_queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 15:07:49 -0500
+
+
+Started GET "/assets/scaffolds.self-44fae4e18213dacaff5a336884e9abe34f3e626ec23c8f95bdee8904297d1908.css?body=1" for ::1 at 2016-06-14 15:07:49 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-14 15:07:49 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-14 15:07:49 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 15:07:49 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-14 15:07:49 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-14 15:07:49 -0500
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-14 15:07:50 -0500
+
+
+Started GET "/assets/maps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-14 15:07:50 -0500
+
+
+Started GET "/assets/queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 15:07:50 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 15:07:50 -0500
+
+
+Started GET "/assets/user_queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 15:07:50 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 15:07:50 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-14 15:07:50 -0500
+
+
+Started GET "/queries/12" for ::1 at 2016-06-14 15:08:19 -0500
+Processing by QueriesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mQuery Load (0.3ms)[0m  [1mSELECT  "queries".* FROM "queries" WHERE "queries"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  Rendered queries/show.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 669ms (ActiveRecord: 2.4ms)
+
+ActionView::Template::Error (undefined method `each' for #<String:0x007fc337da6518>):
+    1: <p id="notice"><%= notice %></p>
+    2: 
+    3: <% @daily.each do | category, data | %>
+    4:   <p><%= "The #{category} is currently #{data}" %></p>
+    5: <% end %>
+  app/views/queries/show.html.erb:3:in `_app_views_queries_show_html_erb___1575062587911045991_70238186679520'
+
+
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (86.3ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (70.2ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (169.4ms)
+
+
+Started GET "/queries/12" for ::1 at 2016-06-14 15:08:51 -0500
+Processing by QueriesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mQuery Load (0.7ms)[0m  SELECT  "queries".* FROM "queries" WHERE "queries"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered queries/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 625ms (Views: 118.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 15:08:52 -0500
+
+
+Started GET "/assets/user_queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 15:08:52 -0500
+
+
+Started GET "/assets/queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 15:08:52 -0500
+
+
+Started GET "/assets/scaffolds.self-44fae4e18213dacaff5a336884e9abe34f3e626ec23c8f95bdee8904297d1908.css?body=1" for ::1 at 2016-06-14 15:08:52 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 15:08:52 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-14 15:08:52 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-14 15:08:52 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-14 15:08:52 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-14 15:08:52 -0500
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-14 15:08:52 -0500
+
+
+Started GET "/assets/maps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-14 15:08:52 -0500
+
+
+Started GET "/assets/queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 15:08:52 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 15:08:52 -0500
+
+
+Started GET "/assets/user_queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 15:08:52 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 15:08:52 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-14 15:08:52 -0500
+
+
+Started GET "/queries/12" for ::1 at 2016-06-14 15:09:06 -0500
+Processing by QueriesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mQuery Load (0.3ms)[0m  [1mSELECT  "queries".* FROM "queries" WHERE "queries"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  Rendered queries/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 587ms (Views: 64.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/scaffolds.self-44fae4e18213dacaff5a336884e9abe34f3e626ec23c8f95bdee8904297d1908.css?body=1" for ::1 at 2016-06-14 15:09:06 -0500
+
+
+Started GET "/assets/queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 15:09:06 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 15:09:06 -0500
+
+
+Started GET "/assets/user_queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 15:09:06 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-14 15:09:06 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 15:09:06 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-14 15:09:07 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-14 15:09:07 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-14 15:09:07 -0500
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-14 15:09:07 -0500
+
+
+Started GET "/assets/maps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-14 15:09:07 -0500
+
+
+Started GET "/assets/queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 15:09:07 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 15:09:07 -0500
+
+
+Started GET "/assets/user_queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 15:09:07 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 15:09:07 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-14 15:09:07 -0500
+
+
+Started GET "/queries/12" for ::1 at 2016-06-14 15:09:42 -0500
+Processing by QueriesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mQuery Load (0.7ms)[0m  SELECT  "queries".* FROM "queries" WHERE "queries"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered queries/show.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 558ms (Views: 117.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/scaffolds.self-44fae4e18213dacaff5a336884e9abe34f3e626ec23c8f95bdee8904297d1908.css?body=1" for ::1 at 2016-06-14 15:09:43 -0500
+
+
+Started GET "/assets/queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 15:09:43 -0500
+
+
+Started GET "/assets/user_queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 15:09:43 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-14 15:09:43 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-14 15:09:43 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-14 15:09:43 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 15:09:43 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 15:09:43 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-14 15:09:43 -0500
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-14 15:09:43 -0500
+
+
+Started GET "/assets/maps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-14 15:09:43 -0500
+
+
+Started GET "/assets/queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 15:09:43 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 15:09:43 -0500
+
+
+Started GET "/assets/user_queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 15:09:43 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 15:09:43 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-14 15:09:43 -0500
+
+
+Started GET "/" for ::1 at 2016-06-14 15:10:21 -0500
+Processing by QueriesController#new as HTML
+  Rendered queries/_form.html.erb (48.8ms)
+  Rendered queries/new.html.erb within layouts/application (51.6ms)
+Completed 200 OK in 106ms (Views: 103.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 15:10:22 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 15:10:22 -0500
+
+
+Started GET "/assets/user_queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 15:10:22 -0500
+
+
+Started GET "/assets/scaffolds.self-44fae4e18213dacaff5a336884e9abe34f3e626ec23c8f95bdee8904297d1908.css?body=1" for ::1 at 2016-06-14 15:10:22 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-14 15:10:22 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-14 15:10:22 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 15:10:22 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-14 15:10:22 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-14 15:10:22 -0500
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-14 15:10:22 -0500
+
+
+Started GET "/assets/maps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-14 15:10:22 -0500
+
+
+Started GET "/assets/queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 15:10:22 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 15:10:22 -0500
+
+
+Started GET "/assets/user_queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 15:10:22 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 15:10:22 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-14 15:10:22 -0500
+
+
+Started POST "/queries" for ::1 at 2016-06-14 15:10:31 -0500
+Processing by QueriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xn20unkk+LeyEs7xEptKWlMLH3fer5O3WEIPn6qVQgLfkrD8s6hquleYNDN00/Ci4cXfSQM+NupuEEZ0ChYcZg==", "query"=>{"address_string"=>"123 Fake Street, Anytown, USA", "today"=>"today", "month"=>"01", "day"=>"01", "year"=>"1970"}, "commit"=>"Create Query"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "queries" ("address_string", "month", "day", "year", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["address_string", "123 Fake Street, Anytown, USA"], ["month", "6"], ["day", "14"], ["year", "2016"], ["created_at", "2016-06-14 20:10:31.655349"], ["updated_at", "2016-06-14 20:10:31.655349"]]
+  [1m[36m (6.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/queries/13
+Completed 302 Found in 16ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/queries/13" for ::1 at 2016-06-14 15:10:31 -0500
+Processing by QueriesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mQuery Load (0.3ms)[0m  SELECT  "queries".* FROM "queries" WHERE "queries"."id" = $1 LIMIT 1  [["id", 13]]
+Completed 500 Internal Server Error in 486ms (ActiveRecord: 0.3ms)
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/query.rb:16:in `convert_address'
+  app/models/query.rb:22:in `get_parsed_weather'
+  app/controllers/queries_controller.rb:12:in `show'
+
+
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.1ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (100.3ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (90.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (195.6ms)
+
+
+Started GET "/queries/13" for ::1 at 2016-06-14 15:19:52 -0500
+Processing by QueriesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mQuery Load (0.3ms)[0m  [1mSELECT  "queries".* FROM "queries" WHERE "queries"."id" = $1 LIMIT 1[0m  [["id", 13]]
+Completed 500 Internal Server Error in 211ms (ActiveRecord: 5.0ms)
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/query.rb:27:in `convert_address'
+  app/models/query.rb:33:in `get_parsed_weather'
+  app/controllers/queries_controller.rb:12:in `show'
+
+
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (101.7ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (90.2ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (206.3ms)
+
+
+Started GET "/" for ::1 at 2016-06-14 15:19:55 -0500
+Processing by QueriesController#new as HTML
+  Rendered queries/_form.html.erb (6.4ms)
+  Rendered queries/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 98ms (Views: 96.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/queries" for ::1 at 2016-06-14 15:20:05 -0500
+Processing by QueriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VjNU9W9gIfHbe2Q2wSZ203n1ZNfF0KfFZrKHdb0BiphP3FCzpeyz/D7xnvSnbswryzuk6RhBAphQ4M6eHYLU/A==", "query"=>{"address_string"=>"123 Fake Street, Anytown, USA", "today"=>"today", "month"=>"01", "day"=>"01", "year"=>"1970"}, "commit"=>"Create Query"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 0.7ms)
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/query.rb:27:in `convert_address'
+  app/models/query.rb:17:in `address_must_respond_to_api'
+  app/controllers/queries_controller.rb:48:in `block in create'
+  app/controllers/queries_controller.rb:47:in `create'
+
+
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.7ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (91.3ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (79.9ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/emilybosakowski/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (181.1ms)
+
+
+Started GET "/" for ::1 at 2016-06-14 15:25:02 -0500
+Processing by QueriesController#new as HTML
+  Rendered queries/_form.html.erb (8.9ms)
+  Rendered queries/new.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 108ms (Views: 82.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/user_queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 15:25:02 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 15:25:02 -0500
+
+
+Started GET "/assets/scaffolds.self-44fae4e18213dacaff5a336884e9abe34f3e626ec23c8f95bdee8904297d1908.css?body=1" for ::1 at 2016-06-14 15:25:02 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-14 15:25:02 -0500
+
+
+Started GET "/assets/queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 15:25:02 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-14 15:25:02 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-14 15:25:02 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-14 15:25:02 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-14 15:25:02 -0500
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-14 15:25:02 -0500
+
+
+Started GET "/assets/maps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-14 15:25:02 -0500
+
+
+Started GET "/assets/queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 15:25:02 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 15:25:02 -0500
+
+
+Started GET "/assets/user_queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 15:25:02 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-14 15:25:02 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-14 15:25:02 -0500
+
+
+Started POST "/queries" for ::1 at 2016-06-14 15:25:07 -0500
+Processing by QueriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+5kFLer5SBSB7uZ7znLszkj9KTQorroR7CHwSMu6o/ridgFrIHXaGWRkHLmoOlY2+jPpCvU/H0zac7mjazn9ng==", "query"=>{"address_string"=>"123 Fake Street, Anytown, USA", "today"=>"today", "month"=>"01", "day"=>"01", "year"=>"1970"}, "commit"=>"Create Query"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  Rendered queries/_form.html.erb (5.5ms)
+  Rendered queries/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 154ms (Views: 41.6ms | ActiveRecord: 0.5ms)

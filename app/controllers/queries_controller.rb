@@ -11,8 +11,8 @@ class QueriesController < ApplicationController
   def show
     @weather = @query.get_parsed_weather
     @currently = @weather["currently"]
-    @hourly = @weather["hourly"]
-    @daily = @weather["daily"]
+    @hourly = @weather["hourly"]["summary"]
+    @daily = @weather["daily"]["summary"]
   end
 
   def new
