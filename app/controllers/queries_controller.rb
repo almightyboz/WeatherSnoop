@@ -13,6 +13,7 @@ class QueriesController < ApplicationController
   end
 
   def create
+    # different tracks if you're querying for a current address or an address and date
     @query = Query.new(query_params)
 
     respond_to do |format|

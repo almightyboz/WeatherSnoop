@@ -1,4 +1,6 @@
 class Query < ActiveRecord::Base
+  # would be easy to perform validations and keep info consistent if the user supplies zip codes instead of street addresses
+  #TODO alternative if the address doesn't return a valid search when it hits the API (concern, this may mean many calls to the API, better to do server-side validation before it hits the API)
   has_many :user_queries
   has_many :users, through: :user_queries, source: :user
 
