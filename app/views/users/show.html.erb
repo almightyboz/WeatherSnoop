@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<% if @user == current_user%>
-  <h3>Welcome, <%= @user.username %></h3>
-<% else %>
-  <p>You do not have permission to view this page</p>
+<% if @user == current_user %>
+  <h2>Welcome, <%= @user.username %></h2>
+  <h4>Your recent searches:</h4>
+  <% @queries.each do |query| %>
+    <p>Address: <%= query.address_string %></p>
+    <p>Date to search: <%= query.month %> <%= query.day %>, <%= query.year %></p>
+    <p>Searched on <%= query.created_at %></p>
+  <% end %>
 <% end %>
+
 <%= link_to 'Back', root_path %>

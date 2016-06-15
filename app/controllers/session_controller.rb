@@ -5,7 +5,7 @@ class SessionController < ApplicationController
 
     if @user && @user.authenticate(session_params[:password])
       session[:user_id] = @user.id
-      redirect_to queries_url
+      redirect_to user_url(@user)
     else
       flash[:notice] = "Oops, please try again"
       render 'new'

@@ -3,6 +3,7 @@ require "time"
 
 class QueriesController < ApplicationController
   before_action :set_query, only: [:show, :historic]
+  helper_method :logged_in?, :current_user
 
   def index
     @queries = Query.all
@@ -38,7 +39,7 @@ class QueriesController < ApplicationController
       @query = Query.new(query_params)
       # p @query.inspect
     end
-    if current_user
+    if logged_in?
       @query.users << current_user
     end
     respond_to do |format|
@@ -53,15 +54,22 @@ class QueriesController < ApplicationController
     end
   end
 
-
-
   private
+
     def set_query
       @query = Query.find(params[:id])
     end
 
     def query_params
       params.require(:query).permit(:address_string, :today, :month, :year, :day)
+    end
+
+    def current_user
+      @current_user ||= User.find_by(id: session[:user_id])
+    end
+
+    def logged_in?
+      session[:user_id] != nil
     end
 
 end
