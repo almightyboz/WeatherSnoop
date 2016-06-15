@@ -24,7 +24,10 @@ gem 'forecast_io'
 gem 'typhoeus'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-
+gem 'pry'
+gem 'capybara'
+gem 'd3_rails'
+gem 'c3-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
