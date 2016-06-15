@@ -15,24 +15,21 @@ class QueriesController < ApplicationController
     @daily = @weather["daily"]["summary"]
   end
 
+  # def historic
+  #   historic_dates = @query.get_past_dates
+  #   puts "=========================================================================================="
+  # end
+
   def new
     @query = Query.new
   end
 
   def create
     # different tracks if you're querying for a current address or an address and date
-    # p query_params
-    # now write code to build the query, with dates
     if query_params["today"]
       month = Date.today.month.to_s
       day = Date.today.day.to_s
       year = Date.today.year.to_s
-      # query_params["month"] = month
-      # query_params["day"] = day
-      # query_params["year"] = year
-      # p "========================================"
-      # p "#{month}, #{day}, #{year}"
-      # p "========================================"
      @query = Query.new(address_string: query_params[:address_string].to_s,
       month: month,
       day: day,
@@ -42,10 +39,9 @@ class QueriesController < ApplicationController
       @query = Query.new(query_params)
       # p @query.inspect
     end
-    # p "========================================"
-    # @query.save
     respond_to do |format|
       if @query.save
+
         format.html { redirect_to @query, notice: 'Query was successfully created.' }
         format.json { render :show, status: :created, location: @query }
       else
@@ -55,8 +51,6 @@ class QueriesController < ApplicationController
     end
   end
 
-  def historic
-  end
 
 
   private
@@ -67,4 +61,5 @@ class QueriesController < ApplicationController
     def query_params
       params.require(:query).permit(:address_string, :today, :month, :year, :day)
     end
+
 end

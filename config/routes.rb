@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   root 'queries#new'
   resources :user_queries
-  resources :queries
   resources :users, only: [:new, :create, :show]
+
+  resources :queries do
+    get :historic, to: 'queries#historic'
+  end
 
   get '/session/new' => 'session#new'
   post '/session' => 'session#create'

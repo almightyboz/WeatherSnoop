@@ -6,7 +6,7 @@ require 'date'
 require 'time'
 
 #THIS ALL FUCKING WORKS
-map_key = ENV["MAP_KEY"]
+map_key = Rails.application.secrets[:MAP_KEY]
 test_address = ["534", "Washington", "Avenue", "Newtown", "PA"]
 p "https://maps.googleapis.com/maps/api/geocode/json?address=#{test_address}&key=#{map_key}"
 map_uri = URI("https://maps.googleapis.com/maps/api/geocode/json?address=#{test_address}&key=#{map_key}")
@@ -19,7 +19,7 @@ longitude = coordinates["lng"]
 # puts "#{latitude} and #{longitude}"
 # puts map_key
 
-weather_key = ENV["WEATHER_KEY"]
+weather_key = Rails.application.secrets[:WEATHER_KEY]
 p weather_key
 # FLAWLESS FUCKING VICTORY FOR CURRENT WEATHER
 weather_uri = URI("https://api.forecast.io/forecast/#{weather_key}/#{latitude},#{longitude}")

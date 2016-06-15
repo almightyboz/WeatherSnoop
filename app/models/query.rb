@@ -7,23 +7,13 @@ class Query < ActiveRecord::Base
 
   validate :address_must_respond_to_api
 
-  # split the user-inputted string into an array
-  def split_query_string
-    self.address_string.split(" ").select{ |unit| unit.to_s }
-  end
-
-  # not optimal that I have to test it by hitting the API
-  # refactor code
-  def address_must_respond_to_api
-    map_uri = URI("https://maps.googleapis.com/maps/api/geocode/json?address=#{self.split_query_string}&key=#{map_key}")
-    map_response = Net::HTTP.get(map_uri)
-    if !map_response.kind_of? Net::HTTPSuccess
-      errors.add(:address_string, "is not a valid U.S. address. Please try again.")
-    end
+  # replaces spaces in the user's string with plus signs
+  def format_query_string
+    self.address_string.gsub(/\s/, "+")
   end
 
   def convert_address
-    map_uri = URI("https://maps.googleapis.com/maps/api/geocode/json?address=#{self.split_query_string}&key=#{map_key}")
+    map_uri = URI("https://maps.googleapis.com/maps/api/geocode/json?address=#{self.format_query_string}&key=#{map_key}")
     map_response = Net::HTTP.get(map_uri)
     parsed_map_response = JSON.parse(map_response)
     coordinates =  parsed_map_response["results"].first["geometry"]["location"]
@@ -33,7 +23,6 @@ class Query < ActiveRecord::Base
   def get_weather
     latitude = convert_address[0]
     longitude = convert_address[1]
-    # weather_key = ENV["WEATHER_KEY"]
     weather_uri = URI("https://api.forecast.io/forecast/#{weather_key}/#{latitude},#{longitude}")
     Net::HTTP.get(weather_uri)
     # JSON.parse(weather_response)
@@ -43,9 +32,6 @@ class Query < ActiveRecord::Base
   def get_parsed_weather
     weather_response = get_weather()
     JSON.parse(weather_response)
-    # parsed_weather_response = JSON.parse(weather_response)
-    # current_weather =  parsed_weather_response["currently"]
-    # today_summary = parsed_weather_response["hourly"]["summary"]
   end
 
   # add today column to model?
@@ -69,12 +55,9 @@ class Query < ActiveRecord::Base
     return date_array
   end
 
-  def
-
-  def get_past_weather()
-    date_array = get_past_dates()
-
-  end
+  # def get_past_weather()
+  #   date_array = get_past_dates()
+  # end
 
   private
 
@@ -84,6 +67,17 @@ class Query < ActiveRecord::Base
 
   def weather_key
     Rails.application.secrets[:WEATHER_KEY]
+  end
+
+  # not optimal that I have to test it by hitting the API
+  def address_must_respond_to_api
+    formatted_string = self.address_string.gsub(/\s/, "+")
+    map_uri = URI("https://maps.googleapis.com/maps/api/geocode/json?address=#{formatted_string}&key=#{map_key}")
+    map_response = Net::HTTP.get(map_uri)
+    parsed_map_response = JSON.parse(map_response)
+    if parsed_map_response["results"].empty?
+      errors.add(:address_string, "is not a valid U.S. address. Please try again.")
+    end
   end
 
 end
