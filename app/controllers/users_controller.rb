@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @queries = @user.queries
   end
 
   def new
@@ -34,6 +35,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.fetch(:user, {})
+      params.require(:user).permit(:username, :password)
     end
 end
