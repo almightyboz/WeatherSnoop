@@ -13,7 +13,7 @@ class Query < ActiveRecord::Base
   end
 
   def convert_address
-    map_key = ENV["MAP_KEY"]
+    # map_key = ENV["MAP_KEY"]
     map_uri = URI("https://maps.googleapis.com/maps/api/geocode/json?address=#{self.format_query_string}&key=#{map_key}")
     map_response = Net::HTTP.get(map_uri)
     parsed_map_response = JSON.parse(map_response)
@@ -22,7 +22,7 @@ class Query < ActiveRecord::Base
   end
 
   def get_weather(date=nil)
-    weather_key = ENV["WEATHER_KEY"]
+    # weather_key = ENV["WEATHER_KEY"]
     @latitude, @longitude = convert_address()
     if date
       weather_uri = URI("https://api.forecast.io/forecast/#{weather_key}/#{@latitude},#{@longitude},#{date}")
@@ -31,10 +31,6 @@ class Query < ActiveRecord::Base
     end
     weather_response = Net::HTTP.get(weather_uri)
     return JSON.parse(weather_response)
-  end
-
-  # add today column to model?
-  def today
   end
 
   def create_date(year=self.year)
@@ -55,41 +51,50 @@ class Query < ActiveRecord::Base
     return date_array
   end
 
-  def get_year_array
-    date_array = get_past_dates
-    date_array.select{|date| date[0..3] }
-    date_array.unshift("x")
-  end
-
-
-  def get_past_weather()
+# called in controller
+# I need an array of years for the x-coordinate in every graph
+  def get_year_array()
     date_array = get_past_dates()
-    @weather_information = []
-    parsed_info = []
-    date_array.each do |date|
-      full_response = get_weather(date)
+    short_date_array = date_array.map{|date| date[0..3].to_i }
+    short_date_array.unshift("x")
+  end
 
-      daily_response =  full_response["daily"]["data"].first
-      puts daily_response.inspect
-      # ideal is collection of hash objects of the form, { temperature => [12, 13, 45, 67], pressure => [110, 100, 101] }.. etc
-      @weather_information << daily_response
-      parsed_info << daily_response
+  # does the API calls of historic weather data
+  # returns big ugly data structure
+  # call in controller, pass array of hashes to next functions
+   def get_past_weather()
+      date_array = get_past_dates()
+     # puts date_array
+     # puts "========================================="
+      @weather_information = []
+      parsed_info = []
+      date_array.each do |date|
+       # puts "========================================="
+       # puts date
+        full_response = get_weather(date)
+
+        daily_response =  full_response["daily"]["data"].first
+        # puts daily_response.inspect
+        # ideal is collection of hash objects of the form, { temperature => [12, 13, 45, 67], pressure => [110, 100, 101] }.. etc
+        @weather_information << daily_response
+        # parsed_info << daily_response
+       # binding.pry
+      end
+    # puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+      # puts @weather_information
+      return @weather_information
     end
-    puts @weather_information
-    return @weather_information
+
+  def find_property(property, forecast_hash)
+    forecast_hash[property]
   end
 
-  def find_property(property, info_hash)
-    return info_hash[property]
-  end
-
-  def format_past_info(info_hash)
-    info_hash = info_hash.first
-    formatted_hash = {}
-    formatted_hash["Minimum Temperature"] = info_hash["temperatureMin"]
-    # formatted_hash["Maximum Temperature"] = info_hash["temperatureMax"]
-    # formatted_hash["Pressure"] = info_hash["pressure"]
-    return formatted_hash
+  def make_property_list(property, hash_array)
+    property_list = [property]
+    hash_array.each do |hash|
+      property_list << find_property(property, hash)
+    end
+    return property_list
   end
 
   private
@@ -104,7 +109,7 @@ class Query < ActiveRecord::Base
 
   # not optimal that I have to validate by hitting the API
   def address_must_respond_to_api
-    map_key = ENV["MAP_KEY"]
+    # map_key = ENV["MAP_KEY"]
     formatted_string = self.address_string.gsub(/\s/, "+")
     map_uri = URI("https://maps.googleapis.com/maps/api/geocode/json?address=#{formatted_string}&key=#{map_key}")
     map_response = Net::HTTP.get(map_uri)

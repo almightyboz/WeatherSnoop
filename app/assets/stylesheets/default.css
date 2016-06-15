@@ -1,21 +1,65 @@
-html {
-  background-color: #E2E2F4;
-}
-
-main {
-  background-color: #E2E2F4;
-}
-
-.container {
-  display: inline-block;
-  text-align: left;
-  min-width: 200px;
-  max-width: 600px;
-  padding: 20px;
-}
 
 p {
   font-family: Verdana;
+}
+
+body {
+    font: 24px Helvetica;
+    background: #999999;
+}
+
+main {
+    min-height: 600px;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-flow: row;
+}
+
+main > .container {
+    margin: 4px;
+    padding: 5px;
+    border: 1px solid #cccc33;
+    border-radius: 7pt;
+    background: #dddd88;
+    flex: 3 1 60%;
+    order: 1;
+}
+
+main > aside {
+    margin: 4px;
+    padding: 5px;
+    border: 1px solid #8888bb;
+    border-radius: 7pt;
+    background: #ccccff;
+    flex: 1 6 30%;
+    order: 2;
+}
+
+header, footer {
+    display: block;
+    margin: 4px;
+    padding: 5px;
+    min-height: 20px;
+    border: 1px solid #000040;
+    border-radius: 7pt;
+    background: #000040;
+}
+
+/* Too narrow to support three columns */
+@media all and (max-width: 640px) {
+    main, #page {
+        flex-direction: column;
+    }
+
+    main > aside, main > .container{
+        order: 0;
+    }
+
+    main > .container, main > aside, header, footer {
+        min-height: 50px;
+        max-height: 50px;
+    }
 }
 
 ul#header {
@@ -23,7 +67,6 @@ ul#header {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #000040;
 }
 
 li#header {
@@ -34,8 +77,9 @@ li#header a {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 24px 26px;
   text-decoration: none;
+  font-size: 14px;
 }
 
 #address-input {
@@ -45,17 +89,12 @@ li#header a {
 }
 
 .form {
-  /*display: inline-block;*/
   margin: auto;
+  padding: 20px 150px;
   text-align: center;
   background-color: #eaeaf0;
 }
 
-#chart {
-  max-width: 600px;
-  display: inline-block;
-  padding: 10px;
-}
 
 /*slightly darker background than current*/
 .weather-data {

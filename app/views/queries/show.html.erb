@@ -1,32 +1,73 @@
 <p id="notice"><%= notice %></p>
 <div class="container current">
-  <p>For the next few hours, expect <%= @hourly %></p>
+  <h2>Today's Forecast:</h2>
+  <h3><%= @summary%></h3>
 
-  <div class="weather-data"
-    <p>Want more details? Of course you do!</p>
+  <div class="weather-data">
+    <h4>Want more current details? Of course you do!</h4>
     <% @currently.each do | category, data | %>
       <p><%= "The #{category} is currently #{data}." %></p>
+    <% end %>
+
+    <h4>In case you were curious, here's what to expect in the next 2 days:</h4>
+    <% @daily.each do |category, data| %>
+      <p><%= "The #{category} should be #{data}" %></p>
     <% end %>
   </div>
 </div>
 
-<div id="chart"></div>
+<aside>
+  <h2>Today's Weather, in historic trends</h2>
+  <h4>Daily Maximum and Minimum Temperature</h4>
+  <div class="chart" id="temperature"></div>
+  <h4>Wind Speed</h4>
+  <div class="chart" id="wind-speed" ></div>
+  <h4>Rain probability for the day</h4>
+  <div class="chart" id="precip"></div>
+<aside>
 
 <script>
 
-// proof of concept code for C3
-// var fake_list = ["data1", 42, 69, 49, 12];
+var yearList = <%= @years.to_json.html_safe %>;
+var minTemp = <%= @min_temperatures.to_json.html_safe %>;
+var maxTemp = <%= @max_temperatures.to_json.html_safe %>;
 
-// var chart = c3.generate({
-//   bindto: "#chart",
-//   data: {
-//     x: 'x',
-//     columns: [
-//     ['x', 1970, 1975, 1980, 1985],
-//     fake_list
-//     ]
-//   },
-// });
+var chart0 = c3.generate({
+  bindto: "#temperature",
+  data: {
+    x: 'x',
+    columns: [
+      yearList,
+      maxTemp,
+      minTemp
+    ]
+  }
+});
 
+var windSpeed = <%= @wind_speed.to_json.html_safe %>;
+
+var chart1 = c3.generate({
+    bindto: "#wind-speed",
+    data: {
+      x: 'x',
+      columns: [
+        yearList,
+        windSpeed
+      ]
+    }
+});
+
+var precipProb = <%= @precip_prob.to_json.html_safe %>;
+
+var chart2 = c3.generate({
+  bindto: "#precip",
+  data: {
+    x: 'x',
+    columns: [
+    yearList,
+    precipProb
+    ]
+  },
+});
 
 </script>
