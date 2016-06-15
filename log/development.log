@@ -10959,3 +10959,328 @@ Started GET "/assets/user_queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f
 
 
 Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-06-15 02:49:17 -0500
+
+
+Started GET "/queries/34" for ::1 at 2016-06-15 03:05:00 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by QueriesController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[35mQuery Load (0.7ms)[0m  SELECT  "queries".* FROM "queries" WHERE "queries"."id" = $1 LIMIT 1  [["id", 34]]
+  Rendered queries/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 2570ms (Views: 718.3ms | ActiveRecord: 20.9ms)
+
+
+Started GET "/assets/default.self-03f2d80137bd2a869e13271c3e53d046f647366b403fef5569f75a3e63f5b927.css?body=1" for ::1 at 2016-06-15 03:05:04 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-15 03:05:04 -0500
+
+
+Started GET "/assets/user_queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-15 03:05:04 -0500
+
+
+Started GET "/assets/queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-15 03:05:04 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-15 03:05:04 -0500
+
+
+Started GET "/assets/scaffolds.self-44fae4e18213dacaff5a336884e9abe34f3e626ec23c8f95bdee8904297d1908.css?body=1" for ::1 at 2016-06-15 03:05:04 -0500
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-06-15 03:05:04 -0500
+
+
+Started GET "/assets/c3.self-8395dac21d80c3e587facff99c7a06d6c89dce22afec2d95e6258cc0c0aec4bb.css?body=1" for ::1 at 2016-06-15 03:05:04 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-15 03:05:04 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-15 03:05:04 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-15 03:05:04 -0500
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-15 03:05:04 -0500
+
+
+Started GET "/assets/maps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-15 03:05:04 -0500
+
+
+Started GET "/assets/queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-15 03:05:04 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-15 03:05:04 -0500
+
+
+Started GET "/assets/user_queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-15 03:05:04 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-15 03:05:04 -0500
+
+
+Started GET "/assets/c3.self-1a2bb808d4cd5c70984a15f38fb9fc539fbd34c492e0bef8cfe0120941b3917a.js?body=1" for ::1 at 2016-06-15 03:05:04 -0500
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-06-15 03:05:04 -0500
+
+
+Started GET "/queries/34" for ::1 at 2016-06-15 03:05:42 -0500
+Processing by QueriesController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mQuery Load (1.1ms)[0m  [1mSELECT  "queries".* FROM "queries" WHERE "queries"."id" = $1 LIMIT 1[0m  [["id", 34]]
+  Rendered queries/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2138ms (Views: 106.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/default.self-c54ece45c70a92b8f1af2f53e30a911af5fd96663d6d383c682cf6c86e0c5fd0.css?body=1" for ::1 at 2016-06-15 03:05:45 -0500
+
+
+Started GET "/assets/scaffolds.self-44fae4e18213dacaff5a336884e9abe34f3e626ec23c8f95bdee8904297d1908.css?body=1" for ::1 at 2016-06-15 03:05:45 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-15 03:05:45 -0500
+
+
+Started GET "/assets/queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-15 03:05:45 -0500
+
+
+Started GET "/assets/user_queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-15 03:05:45 -0500
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-06-15 03:05:45 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-15 03:05:45 -0500
+
+
+Started GET "/assets/c3.self-8395dac21d80c3e587facff99c7a06d6c89dce22afec2d95e6258cc0c0aec4bb.css?body=1" for ::1 at 2016-06-15 03:05:45 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-15 03:05:45 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-15 03:05:45 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-15 03:05:45 -0500
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-15 03:05:45 -0500
+
+
+Started GET "/assets/maps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-15 03:05:45 -0500
+
+
+Started GET "/assets/queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-15 03:05:45 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-15 03:05:45 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-15 03:05:45 -0500
+
+
+Started GET "/assets/c3.self-1a2bb808d4cd5c70984a15f38fb9fc539fbd34c492e0bef8cfe0120941b3917a.js?body=1" for ::1 at 2016-06-15 03:05:45 -0500
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-06-15 03:05:45 -0500
+
+
+Started GET "/assets/user_queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-15 03:05:45 -0500
+
+
+Started GET "/queries/34" for ::1 at 2016-06-15 03:10:33 -0500
+Processing by QueriesController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[35mQuery Load (0.8ms)[0m  SELECT  "queries".* FROM "queries" WHERE "queries"."id" = $1 LIMIT 1  [["id", 34]]
+  Rendered queries/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2738ms (Views: 196.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/default.self-47655e3956c5ab61c977ae72c99717c1bc04f2d292f4efd6eb3d5dec5b67800a.css?body=1" for ::1 at 2016-06-15 03:10:36 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-15 03:10:36 -0500
+
+
+Started GET "/assets/scaffolds.self-44fae4e18213dacaff5a336884e9abe34f3e626ec23c8f95bdee8904297d1908.css?body=1" for ::1 at 2016-06-15 03:10:36 -0500
+
+
+Started GET "/assets/queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-15 03:10:36 -0500
+
+
+Started GET "/assets/user_queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-15 03:10:36 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-15 03:10:36 -0500
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-06-15 03:10:36 -0500
+
+
+Started GET "/assets/c3.self-8395dac21d80c3e587facff99c7a06d6c89dce22afec2d95e6258cc0c0aec4bb.css?body=1" for ::1 at 2016-06-15 03:10:36 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-15 03:10:36 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-15 03:10:36 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-15 03:10:36 -0500
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-15 03:10:36 -0500
+
+
+Started GET "/assets/queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-15 03:10:36 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-15 03:10:36 -0500
+
+
+Started GET "/assets/maps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-15 03:10:36 -0500
+
+
+Started GET "/assets/user_queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-15 03:10:36 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-15 03:10:36 -0500
+
+
+Started GET "/assets/c3.self-1a2bb808d4cd5c70984a15f38fb9fc539fbd34c492e0bef8cfe0120941b3917a.js?body=1" for ::1 at 2016-06-15 03:10:36 -0500
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-06-15 03:10:36 -0500
+
+
+Started GET "/queries/34" for ::1 at 2016-06-15 03:10:52 -0500
+Processing by QueriesController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mQuery Load (0.9ms)[0m  [1mSELECT  "queries".* FROM "queries" WHERE "queries"."id" = $1 LIMIT 1[0m  [["id", 34]]
+  Rendered queries/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2996ms (Views: 170.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-15 03:10:56 -0500
+
+
+Started GET "/assets/default.self-f0a714bc2bf4e7a7b6ff97dbeb92a58d3329e9941862469073ce67706ddc3154.css?body=1" for ::1 at 2016-06-15 03:10:56 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-15 03:10:56 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-15 03:10:57 -0500
+
+
+Started GET "/assets/user_queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-15 03:10:57 -0500
+
+
+Started GET "/assets/scaffolds.self-44fae4e18213dacaff5a336884e9abe34f3e626ec23c8f95bdee8904297d1908.css?body=1" for ::1 at 2016-06-15 03:10:57 -0500
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-06-15 03:10:57 -0500
+
+
+Started GET "/assets/c3.self-8395dac21d80c3e587facff99c7a06d6c89dce22afec2d95e6258cc0c0aec4bb.css?body=1" for ::1 at 2016-06-15 03:10:57 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-15 03:10:57 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-15 03:10:57 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-15 03:10:57 -0500
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-15 03:10:57 -0500
+
+
+Started GET "/assets/maps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-15 03:10:57 -0500
+
+
+Started GET "/assets/queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-15 03:10:57 -0500
+
+
+Started GET "/assets/user_queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-15 03:10:57 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-15 03:10:57 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-15 03:10:57 -0500
+
+
+Started GET "/assets/c3.self-1a2bb808d4cd5c70984a15f38fb9fc539fbd34c492e0bef8cfe0120941b3917a.js?body=1" for ::1 at 2016-06-15 03:10:57 -0500
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-06-15 03:10:57 -0500
+
+
+Started GET "/" for ::1 at 2016-06-15 03:27:34 -0500
+Processing by QueriesController#new as HTML
+  Rendered queries/_form.html.erb (123.3ms)
+  Rendered queries/new.html.erb within layouts/application (164.8ms)
+Completed 200 OK in 388ms (Views: 365.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/default.self-9136333f07e107da2e51fc567366723d48d7bc952c323fab6f894b711615973d.css?body=1" for ::1 at 2016-06-15 03:27:35 -0500
+
+
+Started GET "/assets/queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-15 03:27:36 -0500
+
+
+Started GET "/assets/scaffolds.self-44fae4e18213dacaff5a336884e9abe34f3e626ec23c8f95bdee8904297d1908.css?body=1" for ::1 at 2016-06-15 03:27:36 -0500
+
+
+Started GET "/assets/application.self-d885a0a66bd595c10edb24f8879f94e334d88be0730c4d7c7a7b57c731c09037.css?body=1" for ::1 at 2016-06-15 03:27:36 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-15 03:27:36 -0500
+
+
+Started GET "/assets/user_queries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-15 03:27:36 -0500
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-15 03:27:36 -0500
+
+
+Started GET "/assets/c3.self-8395dac21d80c3e587facff99c7a06d6c89dce22afec2d95e6258cc0c0aec4bb.css?body=1" for ::1 at 2016-06-15 03:27:36 -0500
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-15 03:27:36 -0500
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-15 03:27:36 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-15 03:27:36 -0500
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-15 03:27:36 -0500
+
+
+Started GET "/assets/maps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-06-15 03:27:36 -0500
+
+
+Started GET "/assets/queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-15 03:27:36 -0500
+
+
+Started GET "/assets/user_queries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-15 03:27:36 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-15 03:27:36 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-15 03:27:36 -0500
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-06-15 03:27:36 -0500
+
+
+Started GET "/assets/c3.self-1a2bb808d4cd5c70984a15f38fb9fc539fbd34c492e0bef8cfe0120941b3917a.js?body=1" for ::1 at 2016-06-15 03:27:36 -0500

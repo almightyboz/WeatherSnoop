@@ -73,6 +73,7 @@ class Query < ActiveRecord::Base
     # puts date_array
     # puts "========================================="
     @weather_information = []
+    parsed_info = []
     date_array.each do |date|
       puts "========================================="
       # puts date
@@ -82,6 +83,7 @@ class Query < ActiveRecord::Base
       puts daily_response.inspect
       # ideal is collection of hash objects of the form, { temperature => [12, 13, 45, 67], pressure => [110, 100, 101] }.. etc
       @weather_information << daily_response
+      parsed_info << daily_response
       # binding.pry
     end
     # puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
@@ -89,11 +91,22 @@ class Query < ActiveRecord::Base
     return @weather_information
   end
 
-  # def create_past_collection(property,  input_hash)
+  arp = [{a: 1, b: 2, c: 3}, {a: 2, d: 4} ]
+
+  def xyz(condition)
+    conditions_array = []
+    @weather_information.each do |report|
+      conditions_array << report[condition]
+    end
+    conditions_array
+  end
+
+
+  # def create_past_collection(property, input_hash)
   #   conditions_array = []
   #   input_hash.each do |key, value|
   #     if key == property
-  #     p "xxxXXXXXXXXXxxxxxxXXXXxxxxxxxxxxXXXXXXXxxx"
+  #     # p "xxxXXXXXXXXXxxxxxxXXXXxxxxxxxxxxXXXXXXXxxx"
   #       conditions_array << value
   #     end
   #   end
