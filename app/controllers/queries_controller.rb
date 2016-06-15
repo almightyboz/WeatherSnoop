@@ -15,7 +15,7 @@ class QueriesController < ApplicationController
     @hourly = @weather["hourly"]["summary"]
     @daily = @weather["daily"]["summary"]
 
-    @years = @query.get_year_array
+    @years = @query.get_year_array()
 
     historic_forecast_array = @query.get_past_weather()
     @min_temperatures = @query.make_property_list("temperatureMin", historic_forecast_array)

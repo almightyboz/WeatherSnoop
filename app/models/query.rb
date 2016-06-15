@@ -57,10 +57,10 @@ class Query < ActiveRecord::Base
 
 # called in controller
 # I need an array of years for the x-coordinate in every graph
-  def get_year_array
-    date_array = get_past_dates
-    date_array.select{|date| date[0..3] }
-    date_array.unshift("x")
+  def get_year_array()
+    date_array = get_past_dates()
+    short_date_array = date_array.map{|date| date[0..3].to_i }
+    short_date_array.unshift("x")
   end
 
   # does the API calls of historic weather data
