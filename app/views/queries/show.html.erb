@@ -11,35 +11,51 @@
 </div>
 
 <aside>
-  <div class="chart" id="pressure" ></div>
-  <div class="chart" id="test"></div>
+  <div class="chart" id="temperature"></div>
+  <div class="chart" id="wind-speed" ></div>
+  <div class="chart" id="precip"></div>
 <aside>
 
 <script>
 
 var yearList = <%= @years.to_json.html_safe %>;
-var pressureList = <%= @pressure.to_json.html_safe %>;
+var minTemp = <%= @min_temperatures.to_json.html_safe %>;
+var maxTemp = <%= @max_temperatures.to_json.html_safe %>;
+
+var chart0 = c3.generate({
+  bindto: "#temperature",
+  data: {
+    x: 'x',
+    columns: [
+      yearList,
+      maxTemp,
+      minTemp
+    ]
+  }
+});
+
+var windSpeed = <%= @wind_speed.to_json.html_safe %>;
 
 var chart1 = c3.generate({
-    bindto: "#pressure",
+    bindto: "#wind-speed",
     data: {
       x: 'x',
       columns: [
         yearList,
-        pressureList
+        windSpeed
       ]
     }
 });
 
-var fake_list = ["data1", 42, 69, 49, 12];
+var precipProb = <%= @precip_prob.to_json.html_safe %>;
 
 var chart2 = c3.generate({
-  bindto: "#test",
+  bindto: "#precip",
   data: {
     x: 'x',
     columns: [
-    ['x', 1970, 1975, 1980, 1985],
-    fake_list
+    yearList,
+    precipProb
     ]
   },
 });

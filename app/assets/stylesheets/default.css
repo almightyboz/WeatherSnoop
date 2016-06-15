@@ -9,7 +9,7 @@ body {
 }
 
 main {
-    min-height: 800px;
+    min-height: 600px;
     margin: 0px;
     padding: 0px;
     display: flex;
@@ -40,7 +40,7 @@ header, footer {
     display: block;
     margin: 4px;
     padding: 5px;
-    min-height: 100px;
+    min-height: 20px;
     border: 1px solid #000040;
     border-radius: 7pt;
     background: #000040;
@@ -79,7 +79,7 @@ li#header a {
   text-align: center;
   padding: 24px 26px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 14px;
 }
 
 #address-input {
@@ -89,8 +89,8 @@ li#header a {
 }
 
 .form {
-  /*display: inline-block;*/
   margin: auto;
+  padding: 20px 150px;
   text-align: center;
   background-color: #eaeaf0;
 }

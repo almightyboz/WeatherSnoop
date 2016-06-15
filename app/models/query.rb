@@ -85,7 +85,7 @@ class Query < ActiveRecord::Base
        # binding.pry
       end
     # puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
-      puts @weather_information
+      # puts @weather_information
       return @weather_information
     end
 
