@@ -24,8 +24,6 @@ class Query < ActiveRecord::Base
   def get_weather(date=nil)
     weather_key = ENV["WEATHER_KEY"]
     @latitude, @longitude = convert_address()
-    # latitude = coordinates[0]
-    # longitude = coordinates[1]
     if date
       weather_uri = URI("https://api.forecast.io/forecast/#{weather_key}/#{@latitude},#{@longitude},#{date}")
     else
@@ -34,12 +32,6 @@ class Query < ActiveRecord::Base
     weather_response = Net::HTTP.get(weather_uri)
     return JSON.parse(weather_response)
   end
-
-  # search for weather with longitude and latitude
-  # def get_parsed_weather(date=nil)
-  #   weather_response = get_weather(date)
-  #   JSON.parse(weather_response)
-  # end
 
   # add today column to model?
   def today
@@ -51,7 +43,6 @@ class Query < ActiveRecord::Base
     "#{year}-#{month}-#{day}T00:00:00"
   end
 
-  # get it as a JSON document, so I can use the JSON objects with D3?
   def get_past_dates(num_years=5)
     date_array = []
     year = self.year.to_i
@@ -70,15 +61,12 @@ class Query < ActiveRecord::Base
     date_array.unshift("x")
   end
 
+
   def get_past_weather()
     date_array = get_past_dates()
-    # puts date_array
-    # puts "========================================="
     @weather_information = []
     parsed_info = []
     date_array.each do |date|
-      puts "========================================="
-      # puts date
       full_response = get_weather(date)
 
       daily_response =  full_response["daily"]["data"].first
@@ -86,35 +74,10 @@ class Query < ActiveRecord::Base
       # ideal is collection of hash objects of the form, { temperature => [12, 13, 45, 67], pressure => [110, 100, 101] }.. etc
       @weather_information << daily_response
       parsed_info << daily_response
-      # binding.pry
     end
-    # puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
     puts @weather_information
     return @weather_information
   end
-
-  arp = [{a: 1, b: 2, c: 3}, {a: 2, d: 4} ]
-
-  def xyz(condition)
-    conditions_array = []
-    @weather_information.each do |report|
-      conditions_array << report[condition]
-    end
-    conditions_array
-  end
-
-
-  # def create_past_collection(property, input_hash)
-  #   conditions_array = []
-  #   input_hash.each do |key, value|
-  #     if key == property
-  #     # p "xxxXXXXXXXXXxxxxxxXXXXxxxxxxxxxxXXXXXXXxxx"
-  #       conditions_array << value
-  #     end
-  #   end
-  #   puts conditions_array
-  #   return conditions_array
-  # end
 
   def find_property(property, info_hash)
     return info_hash[property]
@@ -139,7 +102,7 @@ class Query < ActiveRecord::Base
     Rails.application.secrets[:WEATHER_KEY]
   end
 
-  # not optimal that I have to test it by hitting the API
+  # not optimal that I have to validate by hitting the API
   def address_must_respond_to_api
     map_key = ENV["MAP_KEY"]
     formatted_string = self.address_string.gsub(/\s/, "+")
