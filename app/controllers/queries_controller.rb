@@ -38,6 +38,9 @@ class QueriesController < ApplicationController
       @query = Query.new(query_params)
       # p @query.inspect
     end
+    if current_user
+      @query.users << current_user
+    end
     respond_to do |format|
       if @query.save
 
