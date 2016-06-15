@@ -9,16 +9,15 @@ class QueriesController < ApplicationController
   end
 
   def show
-    @weather = @query.get_parsed_weather
+    @weather = @query.get_weather
     @currently = @weather["currently"]
     @hourly = @weather["hourly"]["summary"]
     @daily = @weather["daily"]["summary"]
+    @years = @query.get_year_array
+    @historical = @query.get_past_weather()
+    # binding.pry
+    puts @historical
   end
-
-  # def historic
-  #   historic_dates = @query.get_past_dates
-  #   puts "=========================================================================================="
-  # end
 
   def new
     @query = Query.new

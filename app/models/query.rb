@@ -20,32 +20,39 @@ class Query < ActiveRecord::Base
     ["#{coordinates['lat']}", "#{coordinates['lng']}"]
   end
 
-  def get_weather
-    latitude = convert_address[0]
-    longitude = convert_address[1]
-    weather_uri = URI("https://api.forecast.io/forecast/#{weather_key}/#{latitude},#{longitude}")
-    Net::HTTP.get(weather_uri)
-    # JSON.parse(weather_response)
+  def get_weather(date=nil)
+    @latitude, @longitude = convert_address()
+    # latitude = coordinates[0]
+    # longitude = coordinates[1]
+    if date
+      weather_uri = URI("https://api.forecast.io/forecast/#{weather_key}/#{@latitude},#{@longitude},#{date}")
+    else
+      weather_uri = URI("https://api.forecast.io/forecast/#{weather_key}/#{@latitude},#{@longitude}")
+    end
+    weather_response = Net::HTTP.get(weather_uri)
+    return JSON.parse(weather_response)
   end
 
   # search for weather with longitude and latitude
-  def get_parsed_weather
-    weather_response = get_weather()
-    JSON.parse(weather_response)
-  end
+  # def get_parsed_weather(date=nil)
+  #   weather_response = get_weather(date)
+  #   JSON.parse(weather_response)
+  # end
 
   # add today column to model?
   def today
   end
 
   def create_date(year=self.year)
-    "#{year}-#{self.month}-#{self.day}T00:00:00"
+    month = sprintf '%02d', self.month
+    day = sprintf '%02d', self.day
+    "#{year}-#{month}-#{day}T00:00:00"
   end
 
   # get it as a JSON document, so I can use the JSON objects with D3?
   def get_past_dates(num_years=5)
     date_array = []
-    year = self.year
+    year = self.year.to_i
     counter = 1
     until counter > num_years
       year -= counter
@@ -55,9 +62,57 @@ class Query < ActiveRecord::Base
     return date_array
   end
 
-  # def get_past_weather()
-  #   date_array = get_past_dates()
+  def get_year_array
+    date_array = get_past_dates
+    date_array.select{|date| date[0..3] }
+    date_array.unshift("x")
+  end
+
+  def get_past_weather()
+    date_array = get_past_dates()
+    # puts date_array
+    # puts "========================================="
+    @weather_information = []
+    date_array.each do |date|
+      puts "========================================="
+      # puts date
+      full_response = get_weather(date)
+
+      daily_response =  full_response["daily"]["data"].first
+      puts daily_response.inspect
+      # ideal is collection of hash objects of the form, { temperature => [12, 13, 45, 67], pressure => [110, 100, 101] }.. etc
+      @weather_information << daily_response
+      # binding.pry
+    end
+    # puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+    puts @weather_information
+    return @weather_information
+  end
+
+  # def create_past_collection(property,  input_hash)
+  #   conditions_array = []
+  #   input_hash.each do |key, value|
+  #     if key == property
+  #     p "xxxXXXXXXXXXxxxxxxXXXXxxxxxxxxxxXXXXXXXxxx"
+  #       conditions_array << value
+  #     end
+  #   end
+  #   puts conditions_array
+  #   return conditions_array
   # end
+
+  def find_property(property, info_hash)
+    return info_hash[property]
+  end
+
+  def format_past_info(info_hash)
+    info_hash = info_hash.first
+    formatted_hash = {}
+    formatted_hash["Minimum Temperature"] = info_hash["temperatureMin"]
+    # formatted_hash["Maximum Temperature"] = info_hash["temperatureMax"]
+    # formatted_hash["Pressure"] = info_hash["pressure"]
+    return formatted_hash
+  end
 
   private
 
