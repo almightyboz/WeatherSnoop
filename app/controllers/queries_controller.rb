@@ -14,10 +14,15 @@ class QueriesController < ApplicationController
     @currently = @weather["currently"]
     @hourly = @weather["hourly"]["summary"]
     @daily = @weather["daily"]["summary"]
+
     @years = @query.get_year_array
-    @historical = @query.get_past_weather()
-    # binding.pry
-    puts @historical
+
+    historic_forecast_array = @query.get_past_weather()
+    @min_temperatures = @query.make_property_list("temperatureMin", historic_forecast_array)
+    @max_temperatures = @query.make_property_list("temperatureMax", historic_forecast_array)
+    @pressure = @query.make_property_list("pressure", historic_forecast_array)
+    @wind_speed = @query.make_property_list("windSpeed", historic_forecast_array)
+    @precip_prob = @query.make_property_list("precipProbability", historic_forecast_array)
   end
 
   def new
