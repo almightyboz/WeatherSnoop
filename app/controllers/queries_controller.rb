@@ -2,7 +2,7 @@ require "date"
 require "time"
 
 class QueriesController < ApplicationController
-  before_action :set_query, only: [:show, :historic]
+  before_action :set_query, only: :show
   helper_method :logged_in?, :current_user
 
   def show
@@ -22,8 +22,6 @@ class QueriesController < ApplicationController
     @max_temperatures = @query.make_property_list("temperatureMax", historic_forecast_array)
     @wind_speed = @query.make_property_list("windSpeed", historic_forecast_array)
     @precip_prob = @query.make_property_list("precipProbability", historic_forecast_array)
-
-
   end
 
   def new
