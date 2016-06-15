@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Weathersnoop</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css">
   <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
@@ -17,6 +17,7 @@
         <li id="header"><%= link_to "Login", session_new_path %></li>
         <li id="header"><%= link_to "Sign Up", new_user_path %></li>
       <% else %>
+        <li id="header"><%= link_to "#{current_user.username}", user_path(current_user) %><%=  %></li>
         <li id="header"><%= link_to "Logout", logout_path %></li>
       <% end %>
     </ul>

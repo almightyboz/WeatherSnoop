@@ -33,10 +33,6 @@ class Query < ActiveRecord::Base
     return JSON.parse(weather_response)
   end
 
-  # add today column to model?
-  def today
-  end
-
   def create_date(year=self.year)
     month = sprintf '%02d', self.month
     day = sprintf '%02d', self.day

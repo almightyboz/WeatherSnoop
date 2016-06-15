@@ -1,18 +1,28 @@
 <p id="notice"><%= notice %></p>
 <div class="container current">
-  <p>For the next few hours, expect <%= @hourly %></p>
+  <h2>Today's Forecast:</h2>
+  <h3><%= @summary%></h3>
 
   <div class="weather-data">
-    <p>Want more details? Of course you do!</p>
+    <h4>Want more current details? Of course you do!</h4>
     <% @currently.each do | category, data | %>
       <p><%= "The #{category} is currently #{data}." %></p>
+    <% end %>
+
+    <h4>In case you were curious, here's what to expect in the next 2 days:</h4>
+    <% @daily.each do |category, data| %>
+      <p><%= "The #{category} should be #{data}" %></p>
     <% end %>
   </div>
 </div>
 
 <aside>
+  <h2>Today's Weather, in historic trends</h2>
+  <h4>Daily Maximum and Minimum Temperature</h4>
   <div class="chart" id="temperature"></div>
+  <h4>Wind Speed</h4>
   <div class="chart" id="wind-speed" ></div>
+  <h4>Rain probability for the day</h4>
   <div class="chart" id="precip"></div>
 <aside>
 

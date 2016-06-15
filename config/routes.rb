@@ -2,8 +2,7 @@ Rails.application.routes.draw do
 
   root 'queries#new'
 
-  resources :queries
-  resources :user_queries
+  resources :queries, only: [:new, :create, :show]
   resources :users, only: [:new, :create, :show]
 
   get '/session/new' => 'session#new'
