@@ -13,6 +13,7 @@ class Query < ActiveRecord::Base
   end
 
   def convert_address
+    map_key = ENV["MAP_KEY"]
     map_uri = URI("https://maps.googleapis.com/maps/api/geocode/json?address=#{self.format_query_string}&key=#{map_key}")
     map_response = Net::HTTP.get(map_uri)
     parsed_map_response = JSON.parse(map_response)
@@ -21,6 +22,7 @@ class Query < ActiveRecord::Base
   end
 
   def get_weather(date=nil)
+    weather_key = ENV["WEATHER_KEY"]
     @latitude, @longitude = convert_address()
     # latitude = coordinates[0]
     # longitude = coordinates[1]
@@ -139,6 +141,7 @@ class Query < ActiveRecord::Base
 
   # not optimal that I have to test it by hitting the API
   def address_must_respond_to_api
+    map_key = ENV["MAP_KEY"]
     formatted_string = self.address_string.gsub(/\s/, "+")
     map_uri = URI("https://maps.googleapis.com/maps/api/geocode/json?address=#{formatted_string}&key=#{map_key}")
     map_response = Net::HTTP.get(map_uri)
