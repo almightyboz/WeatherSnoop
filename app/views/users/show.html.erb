@@ -2,14 +2,15 @@
 
 <% if @user == current_user %>
   <h2>Welcome, <%= @user.username %></h2>
-  <div class="container">
-    <h4>Your recent searches:</h4>
-    <% @queries.each do |query| %>
-      <p>Address: <%= query.address_string %></p>
-      <p>Date to search: <%= query.month %> <%= query.day %>, <%= query.year %></p>
-      <p>Searched on <%= query.created_at %></p>
-  </div>
-  <% end %>
-<% end %>
 
-<%= link_to 'Back', root_path %>
+  <div class="container">
+    <h2>Your recent searches:</h2>
+    <% @queries.each do |query| %>
+      <p><%= query.created_at.strftime("Searched on %m/%d/%Y") %></p>
+      <p><%= query.created_at.strftime("at %I:%M%p") %></p>
+      <p>Address: <%= query.address_string %></p>
+      <p>Date: <%= query.month %>/<%= query.day %>/<%= query.year %></p><br><br>
+    <% end %>
+  </div>
+
+<% end %>
