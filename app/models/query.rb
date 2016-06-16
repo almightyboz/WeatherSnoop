@@ -13,7 +13,7 @@ class Query < ActiveRecord::Base
   end
 
   def convert_address
-    # map_key = ENV["MAP_KEY"]
+    map_key = ENV["MAP_KEY"]
     map_uri = URI("https://maps.googleapis.com/maps/api/geocode/json?address=#{self.format_query_string}&key=#{map_key}")
     map_response = Net::HTTP.get(map_uri)
     parsed_map_response = JSON.parse(map_response)
@@ -22,7 +22,7 @@ class Query < ActiveRecord::Base
   end
 
   def get_weather(date=nil)
-    # weather_key = ENV["WEATHER_KEY"]
+    weather_key = ENV["WEATHER_KEY"]
     @latitude, @longitude = convert_address()
     if date
       weather_uri = URI("https://api.forecast.io/forecast/#{weather_key}/#{@latitude},#{@longitude},#{date}")
@@ -51,7 +51,6 @@ class Query < ActiveRecord::Base
     return date_array
   end
 
-# called in controller
 # I need an array of years for the x-coordinate in every graph
   def get_year_array()
     date_array = get_past_dates()
@@ -59,29 +58,17 @@ class Query < ActiveRecord::Base
     short_date_array.unshift("x")
   end
 
-  # does the API calls of historic weather data
-  # returns big ugly data structure
   # call in controller, pass array of hashes to next functions
    def get_past_weather()
       date_array = get_past_dates()
-     # puts date_array
-     # puts "========================================="
       @weather_information = []
-      parsed_info = []
       date_array.each do |date|
-       # puts "========================================="
-       # puts date
         full_response = get_weather(date)
 
         daily_response =  full_response["daily"]["data"].first
-        # puts daily_response.inspect
         # ideal is collection of hash objects of the form, { temperature => [12, 13, 45, 67], pressure => [110, 100, 101] }.. etc
         @weather_information << daily_response
-        # parsed_info << daily_response
-       # binding.pry
       end
-    # puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
-      # puts @weather_information
       return @weather_information
     end
 
@@ -109,7 +96,7 @@ class Query < ActiveRecord::Base
 
   # not optimal that I have to validate by hitting the API
   def address_must_respond_to_api
-    # map_key = ENV["MAP_KEY"]
+    map_key = ENV["MAP_KEY"]
     formatted_string = self.address_string.gsub(/\s/, "+")
     map_uri = URI("https://maps.googleapis.com/maps/api/geocode/json?address=#{formatted_string}&key=#{map_key}")
     map_response = Net::HTTP.get(map_uri)
