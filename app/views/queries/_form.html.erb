@@ -13,12 +13,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :Address_to_search %><br>
+    <p>Search an address:</p><br>
     <%= f.text_field :address_string, placeholder: "123 Fake Street, Anytown, AF", id: "address-input" %>
   </div>
 
   <div class="field date-fields">
-    <%= f.label :Date_to_search %>
+    <p>Search by Date:</p>
 
     <div class="date-field">
       <%= f.select(:month, options_for_select( ("01".."12").to_a, "#{@month}")) %>
