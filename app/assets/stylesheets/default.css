@@ -17,7 +17,7 @@ h1, h2{
 
 #background {
   width: 100%;
-  background-image: url('/assets/blue_sky.jpeg');
+  background-image: url('/assets/images/blue_sky.jpeg');
   background-size: cover;
 }
 
