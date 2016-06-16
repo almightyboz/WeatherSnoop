@@ -2,9 +2,7 @@ class Query < ActiveRecord::Base
 
   has_many :user_queries
   has_many :users, through: :user_queries, source: :user
-
   validates_presence_of :address_string
-
   validate :address_must_respond_to_api
 
   # replaces spaces in the user's string with plus signs
@@ -21,14 +19,10 @@ class Query < ActiveRecord::Base
     ["#{coordinates['lat']}", "#{coordinates['lng']}"]
   end
 
-  def get_weather(date=nil)
+  def get_weather(date)
     weather_key = ENV["WEATHER_KEY"]
     @latitude, @longitude = convert_address()
-    if date
-      weather_uri = URI("https://api.forecast.io/forecast/#{weather_key}/#{@latitude},#{@longitude},#{date}")
-    else
-      weather_uri = URI("https://api.forecast.io/forecast/#{weather_key}/#{@latitude},#{@longitude}")
-    end
+    weather_uri = URI("https://api.forecast.io/forecast/#{weather_key}/#{@latitude},#{@longitude},#{date}")
     weather_response = Net::HTTP.get(weather_uri)
     return JSON.parse(weather_response)
   end
@@ -86,13 +80,13 @@ class Query < ActiveRecord::Base
 
   private
 
-  def map_key
-    Rails.application.secrets[:MAP_KEY]
-  end
+  # def map_key
+  #   Rails.application.secrets[:MAP_KEY]
+  # end
 
-  def weather_key
-    Rails.application.secrets[:WEATHER_KEY]
-  end
+  # def weather_key
+  #   Rails.application.secrets[:WEATHER_KEY]
+  # end
 
   # not optimal that I have to validate by hitting the API
   def address_must_respond_to_api
@@ -102,8 +96,7 @@ class Query < ActiveRecord::Base
     map_response = Net::HTTP.get(map_uri)
     parsed_map_response = JSON.parse(map_response)
     if parsed_map_response["results"].empty?
-      errors.add(:address_string, "is not a valid U.S. address. Please try again.")
+      errors.add(:address_string, "is not a valid address. Please try again.")
     end
   end
-
 end

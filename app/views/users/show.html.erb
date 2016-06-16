@@ -1,15 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <% if @user == current_user %>
-  <h2>Welcome, <%= @user.username %></h2>
 
-  <div class="container">
-    <h2>Your recent searches:</h2>
+  <div class="container user-info">
+    <h2>Welcome, <%= @user.username %></h2>
+
+    <h2>Your recent searches:</h2><hr>
     <% @queries.each do |query| %>
+    <%= link_to( query.address_string, query_path(query), class: "user-link" )%>
+      <p>Date in search: <%= query.month %>/<%= query.day %>/<%= query.year %></p><br><hr><br>
       <p><%= query.created_at.strftime("Searched on %m/%d/%Y") %></p>
       <p><%= query.created_at.strftime("at %I:%M%p") %></p>
-      <p>Address: <%= query.address_string %></p>
-      <p>Date: <%= query.month %>/<%= query.day %>/<%= query.year %></p><br><br>
     <% end %>
   </div>
 
