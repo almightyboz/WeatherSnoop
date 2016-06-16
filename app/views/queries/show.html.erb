@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div class="container current">
   <h2><%= @query.address_string %></h2>
-  <h2>Expect <%= @summary%></h2><br>
+  <h2><%= "#{@query.month}/#{@query.day}/#{@query.year}"%></h2>
 
   <div class="weather-data">
     <p>Weather now</p>

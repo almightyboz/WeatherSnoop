@@ -13,26 +13,19 @@
   <% end %>
 
   <div class="field">
-    <p>Search an address:</p><br>
+    <%= f.label :Search_an_address, class: "form-text" %>
     <%= f.text_field :address_string, placeholder: "123 Fake Street, Anytown, AF", id: "address-input" %>
   </div>
 
   <div class="field date-fields">
-    <p>Search by Date:</p>
-
-    <div class="date-field">
+    <%= f.label :Search_a_date, class: "form-text" %>
       <%= f.select(:month, options_for_select( ("01".."12").to_a, "#{@month}")) %>
-    </div>
-    <div class="date-field">
       <%= f.select(:day, options_for_select( ("01".."31").to_a, "#{@day}")) %>
-    </div>
-    <div class="date-field">
       <%= f.select(:year, options_for_select( ("1970".."2016").to_a , "#{@year}")) %>
-    </div>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Search" %>
   </div>
 
 <% end %>

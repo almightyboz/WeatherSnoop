@@ -8,8 +8,8 @@ class QueriesController < ApplicationController
   def show
     useful_daily_info = ["summary", "temperatureMin", "temperatureMax", "windSpeed", "precipProbability", "humidity", "pressure", "windBearing"]
     useful_current_info = ["summary", "nearestStormDistance", "precipProbability", "apparentTemperature"]
-
-    @weather = @query.get_weather
+    date = @query.create_date()
+    @weather = @query.get_weather(date)
     @currently = @weather["currently"].slice(*useful_current_info)
     @daily = @weather["daily"]["data"].first.slice(*useful_daily_info)
 
